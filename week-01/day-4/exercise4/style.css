@@ -2,4 +2,4 @@
 
 em {color: blue;}
 
-div p:first-letter {color: red;}
+div p::first-letter {color: red;}

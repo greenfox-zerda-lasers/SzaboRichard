@@ -1,0 +1,22 @@
+h1, h2 {text-align: center;}
+
+#content {
+  text-align: center;
+  margin: 0 auto;
+  padding: 45px 45px;
+  border: 1px solid black;
+  height: 334px;
+  width: 310px;
+}
+
+.cube {
+  text-align: left;
+  color: red;
+  background: yellow;
+  padding: 15px 10px;
+  margin: 10px;
+  width: 240px;
+  font-size: 30px;
+  border: 4px solid black;
+  margin: 20px 20őx;
+}
