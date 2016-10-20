@@ -1,0 +1,27 @@
+h1 {
+  padding: 10px;
+  margin: 10px;
+}
+
+div {
+  margin: 0 18px 0;
+  padding: 10px;
+  font-size: 18px;
+  border: 1.5px solid black;
+}
+
+div:hover {
+  background: #E76941;
+}
+
+#top {
+  border-top: 0;
+}
+
+/*#mid {
+  background: #E76941;
+}*/
+
+#bot {
+  border-bottom: 0;
+}

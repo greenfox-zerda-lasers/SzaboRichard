@@ -1,0 +1,25 @@
+h1 {
+  text-align: center;
+  padding: 10px;
+  margin: 10px;
+}
+
+div {
+  margin: 18px auto;;
+  padding: 35px;
+  font-size: 18px;
+  border: 2px solid black;
+  width: 283px;
+}
+
+#top {
+  background:url('duck.png') left center no-repeat;
+}
+
+#mid {
+  background: url('duck.png') center no-repeat;
+}
+
+#bot {
+  background: url('duck.png') right bottom no-repeat;
+}

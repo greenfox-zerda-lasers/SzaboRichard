@@ -1,5 +1,15 @@
-.title {color: green;}
+.title {color: blue;}
 
-em {color: blue;}
+.title2 {color: orange;}
 
-div p:first-letter {color: red;}
+.blue {list-style-type: square;}
+
+.blue li {color:blue;}
+
+.black li {color:black;}
+
+.black {list-style-type: disc;}
+
+.black li:first-child {color:red;}
+
+#fekete li {color: black;}
