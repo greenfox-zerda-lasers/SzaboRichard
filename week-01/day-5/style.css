@@ -2,7 +2,7 @@ h1 {
   color: #e5e5e5;
   text-align: center;
   margin: 0 auto;
-  padding: 20px 20px;
+  padding: 45px 20px;
   font-family: 'Slabo 27px', serif;
 }
 
@@ -22,7 +22,7 @@ header {
   height: 300px;
   width: 1280px;
   margin: 0 auto;
-  background: url(header-jetBlack.jpg) center;)
+  background: url(header-jetBlack.jpg) left center;)
   text-align: center;
 }
 
@@ -60,24 +60,26 @@ nav {
 
 .content {
   width: 700px;
-  height: 500px;
+  height: 850px;
   margin: 30px 300px;
   padding: 10px 10px;
   text-align: justify;
 }
 
-#lista {
+.lista {
   padding: 50px;
+  margin: 10px;
+  text-align:justify; 
 }
 
 #idezet {
   width: 630px;
   /*height: 100px;*/
-  background: #444444;
+  background: #264A81;
   color: white;
   font-family: 'Oswald', sans-serif;
   font-size: 35px;
-  /*text-align: center;*/
+  text-align: center;
   padding: 35px;
 }
 
