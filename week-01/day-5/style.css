@@ -3,19 +3,21 @@ h1 {
   text-align: center;
   margin: 0 auto;
   padding: 45px 20px;
-  font-family: 'Slabo 27px', serif;
+  /*font-family: 'Slabo 27px', serif;*/
+  font-family: 'Abril Fatface', cursive;
 }
 
 body {background: white;}
 
 #main {
-  height: 1000px;
+  height: 2000px;
   width: 1280px;
   max-width: 1280px;
   background:  white;
 /*  box-shadow: 13px 1px 42px 22px rgba(0,0,0,0.75);*/
   margin: 0 auto;
   font-family: 'Slabo 27px', serif;
+
 }
 
 header {
@@ -60,21 +62,24 @@ nav {
 
 .content {
   width: 700px;
-  height: 850px;
+  height: 900px;
   margin: 30px 300px;
   padding: 10px 10px;
   text-align: justify;
 }
 
 .lista {
+  margin: 20px;
+  height: 700px;
   padding: 50px;
   margin: 10px;
-  text-align:justify; 
+  text-align:justify;
 }
 
-#idezet {
-  width: 630px;
+.kiemelesCim {
+  width: 610px;
   /*height: 100px;*/
+  margin: 20px;
   background: #264A81;
   color: white;
   font-family: 'Oswald', sans-serif;
