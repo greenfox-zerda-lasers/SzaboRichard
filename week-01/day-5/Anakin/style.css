@@ -15,7 +15,7 @@ body {
 
 h1 {font-size: 70px;}
 
-h2 {font-size: 40px;}
+
 
 .h2H {
   font-size: 25px;
@@ -26,8 +26,14 @@ h2 {font-size: 40px;}
 h1,h2 {
   font-family: 'Abril Fatface', cursive;
   color: #222;
-  margin: 0;
-  padding: 0;
+   margin: 0;
+}
+
+h2 {
+  font-family: 'Abril Fatface', cursive;
+  font-size: 40px;
+  position: relative;
+  right: 180px;
 }
 
 h3,h4 {
@@ -134,7 +140,7 @@ article {
 .kiemelesCim1 span {
   font-size: 120px;
   top: 2182px;
-  left: 193px;
+  left: 500px;
   position: absolute;
   /*display: inline;
   float: left;*/
