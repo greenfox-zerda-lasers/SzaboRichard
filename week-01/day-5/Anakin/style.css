@@ -1,0 +1,112 @@
+body {
+  background: white;
+  padding: 10px auto;
+  margin: 0 auto;
+  }
+
+.headerstyle {
+  color: black;
+  text-align: justify;;
+  height: 140px;
+  margin: 0 auto;
+  padding: 236px 290px   40px;
+  /*font-family: 'Slabo 27px', serif;*/
+  font-family: 'Abril Fatface', cursive;
+}
+
+h1 {font-size: 70px;}
+
+h2 {font-size: 40px;}
+
+h1,h2 {
+  font-family: 'Abril Fatface', cursive;
+  color: #222;
+  margin: 0;
+  padding: 0;
+}
+
+h3,h4 {
+  font-family: 'Josefin Sans', sans-serif;
+  color: black;
+
+}
+
+h4 {  font-style: italic;}
+
+header {
+    height: 405px;
+    width: 1281px;
+    margin: 0 auto;
+  /*  padding: 0 50%;*/
+    background: url(anakin.png) center;
+    background-size: cover;
+    text-align: center;
+  }
+
+#main {
+  font-family: 'Josefin Sans', sans-serif;
+  color: grey;
+  height: 2000px;
+  width: 1210px;
+  /*max-width: 810px;*/
+  background:  white;
+/*  padding: 0 auto;*/
+/*  box-shadow: 13px 1px 42px 22px rgba(0,0,0,0.75);*/
+  margin: 0 auto;
+  font-family: 'Slabo 27px', serif;
+
+}
+
+
+
+.content {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 20px;
+  width: 810px;
+  height: 900px;
+  margin: 0 auto;
+  padding: 30px 70px;
+  text-align: justify;
+}
+
+article {
+  font-family: 'Josefin Sans', sans-serif;
+  line-height: 170%;
+  width: 722px;
+  margin: 50px;
+  margin: 50px 120px;
+}
+
+span {
+  font-weight: bold;
+  color: black;
+}
+
+.lista {
+  margin: 20px;
+  height: 200px;
+  padding: 50px;
+  margin: 10px;
+  text-align:justify;
+}
+
+.kiemelesCim {
+  width: 810px;
+  /*height: 100px;*/
+  margin: 20px;
+  background: #444444;
+  color: white;
+  font-family: 'Abril Fatface', cursive;
+  font-size: 50px;
+  text-align: center;
+  padding: 35px;
+}
+
+.kiemelesCim p {
+  font-size: 60px;
+  width: 2px;
+  margin: 0;
+  padding: 0;
+  display: inline;
+  float: left;
+}
