@@ -6,7 +6,6 @@ body {
 
 .headerstyle {
   color: black;
-  text-align: justify;;
   height: 140px;
   margin: 0 auto;
   padding: 236px 290px   40px;
@@ -21,6 +20,7 @@ h2 {font-size: 40px;}
 .h2H {
   font-size: 25px;
   font-family: 'Josefin Sans', sans-serif;
+  margin: 20px 0px;
 }
 
 h1,h2 {
@@ -73,7 +73,7 @@ header {
   width: 810px;
   margin: 0 auto;
   padding: 30px 70px;
-  text-align: justify;
+
 }
 
 article {
@@ -104,17 +104,38 @@ article {
   color: white;
   font-family: 'Abril Fatface', cursive;
   font-size: 50px;
-
   position: relative;
   padding: 10px;
-  margin: 17px;
+  margin: -50px;
 
 }
+
 
 .kiemelesCim span {
   font-size: 120px;
   top: 10px;
   left: -138px;
+  /*display: inline;
+  float: left;*/
+}
+
+.kiemelesCim1 {
+  padding: 10px;
+  margin: -27px;
+  background: #444444;
+  color: white;
+  font-family: 'Abril Fatface', cursive;
+  font-size: 50px;
+  padding: 35px;
+  margin: -50px;
+
+}
+
+.kiemelesCim1 span {
+  font-size: 120px;
+  top: 2182px;
+  left: 193px;
+  position: absolute;
   /*display: inline;
   float: left;*/
 }
