@@ -18,6 +18,11 @@ h1 {font-size: 70px;}
 
 h2 {font-size: 40px;}
 
+.h2H {
+  font-size: 25px;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
 h1,h2 {
   font-family: 'Abril Fatface', cursive;
   color: #222;
@@ -28,10 +33,13 @@ h1,h2 {
 h3,h4 {
   font-family: 'Josefin Sans', sans-serif;
   color: black;
-
 }
 
-h4 {  font-style: italic;}
+
+h4 {
+  font-size: 18px;
+  font-style: italic;
+}
 
 header {
     height: 405px;
@@ -46,8 +54,8 @@ header {
 #main {
   font-family: 'Josefin Sans', sans-serif;
   color: grey;
-  height: 2000px;
-  width: 1210px;
+  height: 3150px;
+  width: 1281px;
   /*max-width: 810px;*/
   background:  white;
 /*  padding: 0 auto;*/
@@ -63,50 +71,57 @@ header {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 20px;
   width: 810px;
-  height: 900px;
   margin: 0 auto;
   padding: 30px 70px;
   text-align: justify;
 }
 
 article {
+  color:black;
   font-family: 'Josefin Sans', sans-serif;
   line-height: 170%;
-  width: 722px;
-  margin: 50px;
-  margin: 50px 120px;
+  /*width: 722px;*/
+  margin: 50px 51px;
+  padding: 28px 20px;
 }
 
-span {
+#article2 {
+  font-size: 17px;
+  line-height: 150%;
+}
+
+.elso {
   font-weight: bold;
   color: black;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
-.lista {
-  margin: 20px;
-  height: 200px;
-  padding: 50px;
-  margin: 10px;
-  text-align:justify;
-}
 
 .kiemelesCim {
-  width: 810px;
-  /*height: 100px;*/
-  margin: 20px;
+  /*width: 810px;*/
+  margin: -27px;
   background: #444444;
   color: white;
   font-family: 'Abril Fatface', cursive;
   font-size: 50px;
-  text-align: center;
-  padding: 35px;
+
+  position: relative;
+  padding: 10px;
+  margin: 17px;
+
 }
 
-.kiemelesCim p {
-  font-size: 60px;
-  width: 2px;
-  margin: 0;
-  padding: 0;
-  display: inline;
-  float: left;
+.kiemelesCim span {
+  font-size: 120px;
+  top: 10px;
+  left: -138px;
+  /*display: inline;
+  float: left;*/
+}
+
+hr {
+  width: 700px;
+  height: 3px;
+  background: black;
+  margin: 0 -14px;
 }
