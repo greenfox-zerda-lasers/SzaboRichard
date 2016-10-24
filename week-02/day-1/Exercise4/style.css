@@ -1,0 +1,82 @@
+main {
+  margin: 0 auto;
+  width: 800px;
+  position: relative;
+  text-align: justify;
+}
+
+.szoveg {
+  margin: 10px;
+  width: 300px;
+  margin: 0 auto;
+}
+
+
+.egy, .ketto {
+  border-bottom: 3px solid black;
+}
+
+.egy img {
+  float: left;
+}
+
+
+.ketto img {
+  float: right;
+}
+
+nav {
+ position: absolute;
+ top: 20px;
+ left: 310px;
+ width: 200px;
+ height: 150px;
+ border: 1px solid black;
+ border-radius: 20px;
+ background: white;
+}
+
+.wow, .something-h, .gombok {
+  padding-left: 15px;
+}
+
+.wow, .something-h {
+  border-bottom: 1px solid black;
+}
+
+.wow {
+  color: red;
+  position: relative;
+}
+
+.gombok {
+  float: right;
+}
+
+.ok, .cancel {
+  width: 20px;
+  height: 20px;
+  background: gray;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 10px;
+  padding: 5px;
+}
+
+.cancel {
+  width: 35px;
+  margin-left: 0;
+}
+
+.korX {
+ position: absolute;
+ text-transform: uppercase;
+ color: white;
+ background: black;
+ width: 18px;
+ height: 20px;
+ border-radius: 10px;
+ padding-left: 4px;
+ top: -25px;
+ left: 150px;
+}
