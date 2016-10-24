@@ -20,7 +20,7 @@ h1 {font-size: 70px;}
 .h2H {
   font-size: 25px;
   font-family: 'Josefin Sans', sans-serif;
-  margin: 20px 178  px;
+  margin: 20px 178px;
 }
 
 h1,h2 {
@@ -102,6 +102,9 @@ article {
   font-family: 'Josefin Sans', sans-serif;
 }
 
+article {
+  position: static;
+}
 
 .kiemelesCim {
   /*width: 810px;*/
