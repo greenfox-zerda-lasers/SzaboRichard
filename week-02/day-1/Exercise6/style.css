@@ -1,0 +1,61 @@
+main {
+  margin: 0 auto;
+  width: 900px;
+  height: 1000px;
+  position: relative;
+  overflow: scroll;
+}
+
+header {
+  background: aqua;
+  display: flex;
+  justify-content:  flex-end;
+  height: 100px;
+  flex-basis: 50px;
+  align-items: center;
+  position: fixed;
+  top: 8px;
+  right: 516px;
+  width: 785px;
+}
+
+header > h1 {
+  width: 250px;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 28px;
+  left: 0;
+}
+
+header section {
+  display: flex;
+  flex-basis: 400px;
+  justify-content: space-around;
+  align-items:  ;
+}
+
+header section > h1 {
+  flex:0 0 30px;
+  font-size: 18px;
+  padding: 0px;
+  border-radius: 5px;
+  font-weight: normal;
+}
+
+header section h1:hover {
+  background: white;
+}
+
+#content {
+  margin: 100px 100px;
+}
+
+#content h1 {
+  padding: 10px 10px 10px 0;
+  border-bottom: 1px solid gray;
+}
+
+#content h1 + p {
+
+}
