@@ -1,0 +1,27 @@
+main {
+  margin: 0 auto;
+  width: 800px;
+}
+
+.szoveg {
+  margin: 10px;
+  width: 300px;
+  margin: 0 auto;
+}
+
+
+.egy {
+  border-bottom: 3px solid black;
+}
+
+.egy img {
+  float: left;
+}
+
+.ketto {
+  border-bottom: 3px solid black;
+}
+
+.ketto img {
+  float: right;
+}
