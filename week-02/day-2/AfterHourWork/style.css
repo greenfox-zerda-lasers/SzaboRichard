@@ -1,0 +1,26 @@
+main {
+  margin: 0 auto;
+  width: 400px;
+  background: gray;
+}
+
+label {
+  display: inline;
+}
+
+.checkbox {
+  /*display: flex;
+  flex-wrap: wrap;*/
+  display: block;
+}
+
+.checkbox > h1 {
+  font-size: 15px;
+  font-weight: normal;
+  color: white;
+}
+
+.markbelso1, .markbelso2, .kulso {
+  border: 5px solid mistyrose;
+  height: 50px;
+}

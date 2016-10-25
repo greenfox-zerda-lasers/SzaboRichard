@@ -15,6 +15,8 @@ main > h1 {
 form {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  flex-grow: 1 1 0;
 }
 
 .nevKapcs, .kapcs {
@@ -29,15 +31,18 @@ form {
   margin-right: 0;
 }
 
-.first-column, .second-column {
-  width: 450px;
+.first-column, .second-column, .third-column  {
+  width: 327px;
   padding: 25px;
-  border: 2px solid blue;
 }
 
 label {
   font-size: 12px;
   display: block;
+}
+
+label[checkbox] {
+  display: inline-block,
 }
 
  blockquote {
@@ -51,42 +56,105 @@ label {
 }
 
 input[type="text"],
-input[type="email"]
+input[type="email"],
+input[type=url],
+select
  {
   width: 300px;
   height: 25px;
 }
 
-input[type=url], select {
-  width: 300px;
-  height: 25px;
+.szulnevNem {
+  display: flex;
+  justify-content: space-between;
 }
 
- .checkbox, .szulnevNem {
-  border: 1px solid red;
+.szulnevNem input {
+  width: 60px;
 }
 
-
-.second-column section {
-   margin-top: 15px;
+.nemed {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  flex-wrap: wrap;
 }
 
-
-/*régi css */
-
-/*.nev {
-  padding: 0 10px;
-  background: gray;
-  width: 300px;
-  color: white;
+.szazSzPoz {
+  width: 100%;
+  height: 20px;
+  text-align: justify;
 }
 
-/*.second-column {
+.szazSzPoz h1 {
+  font-size: 12px;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+}
+
+.checkboxWMFuck label {
+  display: inline-block;
+}
+
+.checkboxWMFuck input {
+  width: 30px;
+}
+
+.checkboxWMFuck {
+  margin-bottom: 2px;
+  margin-top: 0;
+}
+
+.nemed h1 {
+  font-size:
+}
+
+.checkbox > h1, h2 {
+  font-size: 12px;
+}
+
+.checkbox h2 {
+  opacity: 0.5;
+}
+
+.markaCol {
   display: flex;
 }
 
-.second-column h2 {
-  text-decoration: none;
-  font-size: 10px;
-  opacity: 0.5;
+.markaCol label {
+  display: inline-block;
+  width: 130px;
+}
+
+.markbelso1  {
+  display: inline-block;
+  width: 50%;
+}
+
+.markbelso2  {
+  display: inline-block;
+  width: 50%;
+}
+
+.second-column section {
+  margin-top: 15px;
+}
+
+ .first-column section {
+  margin-top: 10px;
+ }
+
+ .third-column {
+   width: 100%;
+ }
+
+ .third-column input {
+  width: 100%;
+  height: 100px;
+ }
+
+.fourth-column {
+  width: 100%;
+  padding-left: 25px;
 }

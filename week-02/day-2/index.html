@@ -26,16 +26,21 @@
         <!--  <section class="szulNevNem">-->
             <section class="szulnevNem">
               <section>
-                <label for="szuldatum">Születési éved<br></label>
+                <label for="szuldatum">Születési éved</label>
                 <input type="text" id="szuldatum" value="" placeholder="pl. 1985">
               </section>
 
               <section class="nemed">
-                <h1>Nemed</h1>
-                <label for="woman">nő</label>
-                <input  id="woman" type="checkbox" name="wmn_checkbox" value="">
-                <label for="man">férfi</label>
-                <input id="man" type="checkbox" name="man_chechkbox" value="">
+                <section class="szazSzPoz">
+                  <h1>Nemed</h1>
+                </section>
+
+                <section class="checkboxWMFuck">
+                  <label for="woman">nő</label>
+                  <input  id="woman" type="checkbox" name="wmn_checkbox" value="">
+                  <label for="man">férfi</label>
+                  <input id="man" type="checkbox" name="man_chechkbox" value="">
+                </section>
               </section>
             </section>
 
@@ -43,27 +48,34 @@
               <h1>Milyen márkát szeretsz?</h1>
                 <!-- lehet, h kü,lön sectionbe menjen row-ként míg az alsó column-->
               <section class="markaCol">
-                <label for="marka">Adidas</label>
-                <input type="checkbox" class="marka" value="">
-                <label for="marka">Apple</label>
-                <input type="checkbox" class="marka" value="">
-                <label for="marka">Coca-Cola</label>
-                <input type="checkbox" class="marka" value="">
-                <label for="marka">Mazda</label>
-                <input type="checkbox" class="marka" value="">
-                <label for="marka">Nike</label>
-                <input type="checkbox" class="marka" value="">
+                <div class="markbelso1">
+                    <input type="checkbox" class="marka" value="">
+                    <label for="marka">Adidas</label>
+                    <input type="checkbox" class="marka" value="" >
+                    <label for="marka">Apple</label>
+                    <input type="checkbox" class="marka" value="">
+                    <label for="marka">Coca-Cola</label>
+                    <input type="checkbox" class="marka" value="">
+                    <label for="marka">Mazda</label>
+                    <input type="checkbox" class="marka" value="">
+                    <label for="marka">Nike</label>
 
-                <label for="marka">Opel</label>
-                <input type="checkbox" class="marka" value="">
-                <label for="marka">Ray-ban</label>
-                <input type="checkbox" class="marka" value="">
-                <label for="marka">Starbucks</label>
-                <input type="checkbox" class="marka" value="">
-                <label for="marka">Tesla</label>
-                <input type="checkbox" class="marka" value="">
-                <label for="marka">Yahoo</label>
-                <input type="checkbox" class="marka" value="">
+
+                </div>
+
+                <div class="markbelso2">
+                    <input type="checkbox" class="marka" value="">
+                    <label for="marka">Opel</label>
+                    <input type="checkbox" class="marka" value="">
+                    <label for="marka">Ray-ban</label>
+                    <input type="checkbox" class="marka" value="">
+                    <label for="marka">Starbucks</label>
+                    <input type="checkbox" class="marka" value="">
+                    <label for="marka">Tesla</label>
+                    <input type="checkbox"class="marka"value="">                      <label for="marka">Yahoo</label>
+
+                </div>
+
              </section>
              <h2>Többet is választhatsz</h2>
             </section>
@@ -104,6 +116,24 @@
               <option>Panel</option>
             </select>
           </section>
+        </section>
+
+        <section class="third-column">
+          <label for="szovegDob"><blockquote>Bemutatkozas</blockquote></label>
+          <input id="szovegDob" type="text" name="name" value="">
+        </section>
+
+        <section class="fourth-column">
+          <label for="button">CV Feltöltése</label>
+          <input id="button" input="file" name="name" value="">
+        </section>
+
+        <section class="fifth-colun">
+
+        </section>
+
+        <section class="sixth-column">
+
         </section>
 
      </form>
