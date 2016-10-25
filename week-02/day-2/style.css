@@ -1,0 +1,92 @@
+main {
+  margin: 0 auto;
+  width: 755px;
+  background: #DCD6CD;
+  padding: 50px 100px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+main > h1 {
+  margin: 0;
+  padding-left: 30px;
+  font-size: 28px;
+}
+
+form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nevKapcs, .kapcs {
+  font-size: 18px;
+  font-weight: normal;
+  background: #938c97;
+  width: 220px;
+  color: white;
+  height: 30px;
+  width: 300px;
+  padding-left: 10px;
+  margin-right: 0;
+}
+
+.first-column, .second-column {
+  width: 450px;
+  padding: 25px;
+  border: 2px solid blue;
+}
+
+label {
+  font-size: 12px;
+  display: block;
+}
+
+ blockquote {
+  padding: 0;
+  margin: 0;
+}
+
+ blockquote::after {
+  content: "*";
+  color: red;
+}
+
+input[type="text"],
+input[type="email"]
+ {
+  width: 300px;
+  height: 25px;
+}
+
+input[type=url], select {
+  width: 300px;
+  height: 25px;
+}
+
+ .checkbox, .szulnevNem {
+  border: 1px solid red;
+}
+
+
+.second-column section {
+   margin-top: 15px;
+}
+
+
+/*régi css */
+
+/*.nev {
+  padding: 0 10px;
+  background: gray;
+  width: 300px;
+  color: white;
+}
+
+/*.second-column {
+  display: flex;
+}
+
+.second-column h2 {
+  text-decoration: none;
+  font-size: 10px;
+  opacity: 0.5;
+}

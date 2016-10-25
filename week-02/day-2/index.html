@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css" media="screen" title="no title">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <title>First Form</title>
+  </head>
+  <body>
+   <main>
+     <h1>Profil</h1>
+     <form class="" action="index.html" method="post">
+
+        <section class="first-column">
+
+          <section class="nevKapcs">
+            <article class="nev">
+              <h1>Személyes adatok</h1>
+            </article>
+          </section>
+
+          <section>
+            <label for="name"><blockquote>Név</blockquote></label>
+            <input type="text" id="name" value="">
+          </section>
+        <!--  <section class="szulNevNem">-->
+            <section class="szulnevNem">
+              <section>
+                <label for="szuldatum">Születési éved<br></label>
+                <input type="text" id="szuldatum" value="" placeholder="pl. 1985">
+              </section>
+
+              <section class="nemed">
+                <h1>Nemed</h1>
+                <label for="woman">nő</label>
+                <input  id="woman" type="checkbox" name="wmn_checkbox" value="">
+                <label for="man">férfi</label>
+                <input id="man" type="checkbox" name="man_chechkbox" value="">
+              </section>
+            </section>
+
+            <section class="checkbox">
+              <h1>Milyen márkát szeretsz?</h1>
+                <!-- lehet, h kü,lön sectionbe menjen row-ként míg az alsó column-->
+              <section class="markaCol">
+                <label for="marka">Adidas</label>
+                <input type="checkbox" class="marka" value="">
+                <label for="marka">Apple</label>
+                <input type="checkbox" class="marka" value="">
+                <label for="marka">Coca-Cola</label>
+                <input type="checkbox" class="marka" value="">
+                <label for="marka">Mazda</label>
+                <input type="checkbox" class="marka" value="">
+                <label for="marka">Nike</label>
+                <input type="checkbox" class="marka" value="">
+
+                <label for="marka">Opel</label>
+                <input type="checkbox" class="marka" value="">
+                <label for="marka">Ray-ban</label>
+                <input type="checkbox" class="marka" value="">
+                <label for="marka">Starbucks</label>
+                <input type="checkbox" class="marka" value="">
+                <label for="marka">Tesla</label>
+                <input type="checkbox" class="marka" value="">
+                <label for="marka">Yahoo</label>
+                <input type="checkbox" class="marka" value="">
+             </section>
+             <h2>Többet is választhatsz</h2>
+            </section>
+          </section>
+        </section>
+
+        <section class="second-column">
+          <article class="kapcs">
+            <h1>Kapcsolat</h1>
+          </article>
+
+          <section class="telefonszam">
+            <label for="telefonszam"><blockquote>Telefonszám</blockquote></label>
+            <input id="telefonszam" type="text" name="name" value="" placeholder="+36 -- --- ----">
+          </section>
+
+          <section class="email">
+            <label for="emailC"><blockquote>Email-cím</blockquote></label>
+            <input id="emailC" type="email" name="name" value="" placeholder="nev@domain.hu">
+          </section>
+
+          <section class="facebook">
+            <label for="facebookP">Facebook</label>
+            <input id="facebookP" type="url" name="name" value="" placeholder="htttp//facebook.com">
+          </section>
+
+          <section class="twitter">
+            <label for="twitterP">Twitter</label>
+            <input id="twitterP" type="url" name="name" value="" placeholder="htttp//twitter.com/">
+          </section>
+
+          <section class="hazType">
+            <label for="hazType">Milyen házban laksz?</label>
+            <select class="hazType" name="">
+              <option>Válassz típust</option>
+              <option>Társasház</option>
+              <option>Családiház</option>
+              <option>Panel</option>
+            </select>
+          </section>
+        </section>
+
+     </form>
+   </main>
+  </body>
+</html>
