@@ -1,0 +1,62 @@
+main {
+  margin: 0 auto;
+/*  width: 300px;*/
+  height: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+input {
+  font-size: 25px;
+  margin: 5px;
+  width: 230px;
+  height: 64px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+#gomb {
+  background: -webkit-linear-gradient(bottom, rgba(255,255,255,1) 0%,rgba(243,243,243,1) 8%,rgba(243,243,243,1) 8%,rgba(243,243,243,1) 40%,rgba(255,255,255,1) 100%);
+  box-shadow: 1px 0px 5px 0px rgba(144,187,189,1);
+  border: 0;
+  color:gray;
+
+}
+
+#gomb:hover {
+  background: -webkit-linear-gradient(top, rgba(252,255,244,1) 9%,rgba(223,229,215,1) 40%,rgba(223,229,215,1) 78%); /* Chrome10-25,Safari5.1-6 */
+}
+
+#gomb:active {
+  background: -webkit-linear-gradient(top, rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 84%,rgba(254,254,254,1) 100%); /* Chrome10-25,Safari5.1-6 */
+}
+
+#gomb1 {
+  background: -webkit-linear-gradient(top, rgba(73,192,240,1) 0%,rgba(73,192,240,1) 44%,rgba(44,175,227,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  color: white;
+  border: 2px solid #0080A2;
+  text-shadow: 0px -3px 3px rgba(150, 150, 150, 0.63);
+}
+
+#gomb1:hover {
+  background: -webkit-linear-gradient(top, rgba(178,225,255,1) 0%,rgba(102,182,252,1) 46%,rgba(102,182,252,1) 46%,rgba(102,182,252,1) 46%,rgba(102,182,252,1) 66%,rgba(178,225,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+}
+
+#gomb1:active {
+  /*background: -webkit-linear-gradient(top, rgba(169,228,247,1) 0%,rgba(15,180,231,1) 64%); /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-linear-gradient(top, rgba(30,87,153,1) 10%,rgba(32,124,202,1) 24%,rgba(41,137,216,1) 50%,rgba(125,185,232,1) 99%); /* Chrome10-25,Safari5.1-6 */
+}
+
+#gomb2 {
+  background: -webkit-linear-gradient(top, rgba(180,227,145,1) 0%,rgba(97,196,25,1) 100%,rgba(180,227,145,1) 100%,rgba(97,196,25,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  border: 2px solid #608C00;
+  color: white;
+  text-shadow: 0px -3px 3px rgba(150, 150, 150, 0.63);
+}
+
+#gomb2:hover {
+  background: -webkit-linear-gradient(top, rgba(191,210,85,1) 0%,rgba(114,170,0,1) 19%,rgba(114,170,0,1) 19%,rgba(142,185,42,1) 50%,rgba(158,203,45,1) 100%); /* Chrome10-25,Safari5.1-6 */
+}
+
+#gomb2:active {
+  background: -webkit-linear-gradient(top, rgba(191,210,85,1) 0%,rgba(114,170,0,1) 19%,rgba(114,170,0,1) 19%,rgba(142,185,42,1) 50%,rgba(158,203,45,1) 63%,rgba(158,203,45,1) 74%,rgba(158,203,45,1) 79%,rgba(158,203,45,1) 80%,rgba(158,203,45,1) 91%); /* Chrome10-25,Safari5.1-6 */
+}

@@ -1,0 +1,71 @@
+body {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+/* Left nav Style */
+
+nav {
+  display:  flex;
+  flex: 0 0 180px;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(to top, rgba(246,246,246,1) 80%,rgba(255,255,255,1) 100%);
+}
+
+main {
+  width: 100%;
+}
+
+.imgBackground {
+  width: 140px;
+  margin: 0 15px;
+  height: 165px;
+  background-image: url("../img/wikilogo.png");
+  background-repeat: no-repeat;x;
+  background-size: 100%;
+}
+
+/*nav section {
+  margin: 5px;
+} */
+
+nav section h1 {
+  margin: 0 8px 0 0;
+  font-size: 12px;
+  font-weight:  normal;
+}
+
+nav section ul {
+  padding: 5px;
+}
+
+nav section ul li {
+  list-style-type: none;
+}
+
+nav section ul li a {
+  text-decoration: none;
+  font-size: 12px
+}
+
+.row ul:last-of-type {
+  border-bottom: 1px solid gray;
+}
+
+.sixth ul:last-of-type{
+  border:0;
+}
+
+.sixth {
+  padding-left: 10px;
+}
+
+.sixth blockquote {
+  font-size: 12px;
+}
+
+
+
+/* End of lest Style */
