@@ -5,21 +5,25 @@ body {
   font-family: 'Droid Serif', serif;
 }
 
-
 main {
   display: flex;
   flex-wrap: wrap;
 }
 
 .flex-mid {
-  width: 83%;
+  flex: 1;
   display: flex;
   flex-wrap: wrap;
+  align-content: flex-start;
 }
 
 /* Left nav Style */
 
-#left {
+.leftNAV {
+  flex: 0;
+}
+
+.leftNav {
   display:  flex;
   flex: 0 0 180px;
   flex-direction: column;
@@ -39,21 +43,24 @@ main {
   background-size: 100%;
 }
 
-#left section h1 {
+.leftNav section h1 {
   margin: 0 8px 0 0;
   font-size: 12px;
   font-weight:  normal;
 }
 
-#left section ul {
+.leftNav section ul,
+.flex-mid ul {
   padding: 5px;
 }
 
-#left section ul li {
+.leftNav section ul li,
+.flex-mid ul li {
   list-style-type: none;
 }
 
-#left section ul li a {
+.leftNav section ul li a,
+.flex-mid ul li a {
   text-decoration: none;
   font-size: 11px
 }
@@ -78,17 +85,87 @@ main {
 
 /*Top Nav design */
 
-#top {
+.topNav {
   display: flex;
+  justify-content: space-between;
   flex: 1 83%;
   width: 100%;
   height: 75px;
-  background: red;
+  background: -webkit-linear-gradient(top, rgba(255,255,255,1) 51%,rgba(243,243,243,1) 90%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */ 
 }
+
+.topNav ul li {
+  font-size: 12px;
+  font-weight: normal;
+  display: inline;
+  padding: 5px;
+  margin: 1px;
+}
+
+.topNav ul {
+  padding: 2px;
+  margin: 2px;
+}
+
+/* Topon belüli flexek */
+
+.cim {
+  flex-grow: 8;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+/* Címen belüli flex */
+
+.nav-topLFLX {
+  height: 75px;
+  align-items: flex-end;
+}
+
+.nav-topRFLX {
+  align-items: flex-end;
+  height: 75px;
+}
+
+.nav-topLFLX, .nav-topRFLX {
+  display: flex;
+}
+
+/*Címen belüli flex vége */
+
+/* rightbar flex atrr*/
+
+.rightBar {
+  flex-grow: 0;
+}
+
+.search-rightbar {
+  width: 360px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 0;
+}
+
+.search-rightbarInnerTop {
+  width: 100%;
+}
+
+.search-rightbarInnerTop ul {
+  padding: 2px;
+  margin: 2px;
+}
+
+.search-rightbarInnerBot {
+
+}
+
+
+
+/*Topon belüli flex END */
 
 /*End of top nav design */
 
 .main-content {
-  flex: 1 100%;
+  flex: 1 1 100%;
   background: gray;
 }
