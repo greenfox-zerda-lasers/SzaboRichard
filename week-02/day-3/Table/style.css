@@ -4,6 +4,7 @@ main {
   justify-content: center;
   align-items: center;
   background: #3E94EC;
+  font-family: 'Roboto Condensed', sans-serif;
   width: 876px;
   height: 600px;
 }
@@ -19,7 +20,7 @@ td, th {
 
 td, th {
   border: 2px solid #BEC1CF;
-  font-size: 20px;
+  font-size: 22px;
 }
 
 thead tr th:first-child,

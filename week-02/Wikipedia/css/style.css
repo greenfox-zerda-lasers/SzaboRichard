@@ -1,12 +1,25 @@
 body {
-  display: flex;
+
   margin: 0;
   padding: 0;
+  font-family: 'Droid Serif', serif;
+}
+
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-mid {
+  width: 83%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 /* Left nav Style */
 
-nav {
+#left {
   display:  flex;
   flex: 0 0 180px;
   flex-direction: column;
@@ -14,9 +27,8 @@ nav {
   background: linear-gradient(to top, rgba(246,246,246,1) 80%,rgba(255,255,255,1) 100%);
 }
 
-main {
-  width: 100%;
-}
+
+/* Nav left style Start */
 
 .imgBackground {
   width: 140px;
@@ -27,27 +39,23 @@ main {
   background-size: 100%;
 }
 
-/*nav section {
-  margin: 5px;
-} */
-
-nav section h1 {
+#left section h1 {
   margin: 0 8px 0 0;
   font-size: 12px;
   font-weight:  normal;
 }
 
-nav section ul {
+#left section ul {
   padding: 5px;
 }
 
-nav section ul li {
+#left section ul li {
   list-style-type: none;
 }
 
-nav section ul li a {
+#left section ul li a {
   text-decoration: none;
-  font-size: 12px
+  font-size: 11px
 }
 
 .row ul:last-of-type {
@@ -66,6 +74,21 @@ nav section ul li a {
   font-size: 12px;
 }
 
-
-
 /* End of lest Style */
+
+/*Top Nav design */
+
+#top {
+  display: flex;
+  flex: 1 83%;
+  width: 100%;
+  height: 75px;
+  background: red;
+}
+
+/*End of top nav design */
+
+.main-content {
+  flex: 1 100%;
+  background: gray;
+}
