@@ -2,7 +2,7 @@ body {
 
   margin: 0;
   padding: 0;
-  font-family: 'Droid Serif', serif;
+  font-family: sans-serif;
 }
 
 main {
@@ -322,38 +322,89 @@ input[type="button"] {
 
 /*--------------------------4th block-------------------------*/
 
+.main-inner-Text-block-fifth.imgBox {
+  float: right;
+}
+
+.main-inner-Text-block-fifth:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
 .main-inner-Text-blockfourth-img1, .main-inner-Text-blockfourth-img2 {
   width: 230px;
   height: 358px;
   border: 1px solid gray;
   background: -webkit-linear-gradient(top, rgba(243,243,243,1) 13%,rgba(243,243,243,1) 13%,rgba(255,255,255,1) 51%,rgba(255,255,255,1) 100%);
   margin: 20px;
-  float: right;
+  line-height: normal;
+  text-align: justify;
 }
 
-.main-inner-Text-blockfourth-img1:after {
-  content: "";
-  clear: both;
-  display: block;
+.main-inner-Text-blockfourth-img1, .main-inner-Text-blockfourth-img2 p {
+  padding: 0 5px 5px;
 }
+
 
 .main-inner-Text-blockfourth-img1 a {
-  background-image: url("../img/mha2.jpg");
+  background-image: url("../img/mha3.gif");
   background-position: center;
   background-size: cover;
   display: block;
   width: 220px;
   height: 276px;
+  margin: 5px;
 }
 
-
 .main-inner-Text-blockfourth-img2 {
-  width: 226px;
+  width: 232px;
   height: 220px;
+}
+
+.main-inner-Text-blockfourth-img2 a {
+  background-image: url("../img/mha2.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: block;
+  width: 216px;
+  height: 172px;
+  margin: 5px;
 }
 
 /*-----------------------------5th block -------------------*/
 
 .main-inner-Text-block.fifth h1 {
   border: 0;
+}
+
+.main-inner-Text-block-fifth.BlockAfter {
+  margin-left: 55px;
+}
+
+/*------------------------End 5th Block -------------------*/
+
+/*-------------------- ------------------------*/
+
+.main-inner-Text-block.gigaUlLi {
+  -webkit-column-width: 30em;
+  column-width: 30em;
+  list-style-type: decimal;
+  display: block;
+}
+
+.main-inner-Text-block.gigaUlLi ol {
+  font-size: 100%;
+   margin-bottom: 0;
+  list-style-type: inherit;
+}
+
+.main-inner-Text-block.gigaUlLi ol li {
+  line-height: 1.6;
+  display: list-item;
+  text-align: -webkit-match-parent;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid-column;
 }
