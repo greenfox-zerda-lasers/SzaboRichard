@@ -1,0 +1,36 @@
+main {
+  margin: 0 auto;
+  background: black;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.alsoBut
+{
+  transform: rotate(45deg);
+  width: 70px;
+  height: 70px;
+}
+
+.alsoSp {
+  transform: rotate(-45deg);
+  display: inline-block;
+}
+
+.felsodiv {
+  width: 70px;
+  height: 70px;
+  border: 1px solid red;
+  position: absolute;
+  z-index: 99999;
+}
+
+.felsiv:hover {
+  color: red;
+  transition: 2s ease;
+  transform: rotate(45deg);
+}
