@@ -1,0 +1,214 @@
+main {
+  margin: 0 auto;
+  background: #DCD6CD;
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid red;
+}
+
+nav {
+  width: 100%;
+  padding-left: 60px;
+}
+
+nav h1 {
+  margin-bottom: 0;
+  font-size: 1.2em;
+}
+
+.main-data-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid blue;
+  width: 90%;
+  margin: 2% 10%;
+}
+
+.personal-data-Left, .contact-Right {
+  width: 40%;
+  flex-grow: 1;
+  flex: 1 auto;
+}
+
+.headerContact {
+  font-weight: normal;
+  background: #938c97;
+  width: 220px;
+  color: white;
+  height: 30px;
+  width: 90%;
+  margin-bottom: 10px;
+}
+
+.headerContact h1 {
+  padding-top: 5px;
+  padding-left: 5px;
+}
+
+label {
+  font-weight: bold;
+  font-size: 0.9em;
+  margin: 10px 10px 10px 0;
+}
+
+input {
+  margin: 10px 0 10px 0;
+}
+
+/*--------Left side style------------*/
+
+.personal-data-inner.nameField input, .contact-inner input {
+  height: 30px;
+  width: 90%;
+  margin-top: 1px;
+}
+
+.personal-data-inner.nameField label {
+  margin-right: 20px;
+}
+
+.ageGender {
+  display: flex;
+}
+
+.personal-data-inner__born, .personal-data-inner__gender {
+  width: 40%;
+}
+
+.personal-data-inner__born input {
+  width:  40%;
+  height: 30px;
+}
+
+.personal-data-inner__born label {
+  margin-right: 70px;
+}
+
+.personal-data-inner__gender h1 {
+  margin: 3px 0 0 0;
+  padding: 0;
+  font-size: 0.9em;
+}
+
+.personal-data-inner__gender input {
+  margin-top: 10px;
+  border-radius: 30px;
+}
+
+/*--------------Great checkbox style---------------------*/
+
+.personal-data-inner.checkList {
+  display: flex;
+  flex-direction: column;
+}
+
+.personal-data-inner.checkList h1 {
+  font-size: 1em;
+}
+
+.personal-data-inner.checkList h2 {
+  font-size: 0.7em;
+  font-weight: normal;
+  opacity: 0.5;
+  margin: 5px 10px;
+  padding: 0;
+}
+
+.personal-data-inner__checkList {
+  display: flex;
+  flex-wrap: nowrap;
+  /*flex-direction: column;*/
+}
+
+.checkList__leftCol , .checkList__rightCol  {
+  display: inline-block;
+  width: 45%;
+}
+
+.checkList__leftCol input, .checkList__rightCol input {
+  margin: 0;
+}
+
+/*----------------Right Select----------------------*/
+
+.contact-inner.houseType select {
+  width: 90%;
+  height: 30px;
+  margin-top: 5px;
+}
+
+/*---------Text field------------*/
+
+.introduction-cv-upload {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0;
+}
+
+.introduction-cv-upload label {
+  font-size: 0.9em;
+  width: 98%;
+}
+
+.introduction-cv-upload textarea {
+  margin-right: 5%;
+  flex: 1 auto;
+}
+
+.introduction-cv-upload input[type=file] {
+  /*width: 45%;
+  height: 25px;*/
+  display: none;
+}
+
+#inputfileLabel {
+  width: 33%;
+  height: 25px;
+  border: 1px solid gray;
+  background: -webkit-linear-gradient(top, #eeeeee 0%,#eeeeee 90%,#cccccc 100%); /* Chrome10-25,Safari5.1-6 */
+  text-align: center;
+  padding-top: 5px;
+  color: gray;
+  margin-right: 50%;
+  text-transform: uppercase;
+}
+
+.terms-of-useCheck a {
+  color: black;
+  opacity: 0.8;
+}
+
+.terms-of-useCheck label {
+  opacity: 0.8;
+}
+
+.terms-of-useCheck input {
+  width: 15px;
+  height: 15px;
+}
+
+/*-------Bottom Buttons----------*/
+
+.bottom-two-primaryBut {
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+}
+
+.save-button, .cancel-button {
+  text-transform: uppercase;
+  height: 38px;
+}
+
+.save-button {
+  width: 35%;
+  background: -webkit-linear-gradient(top, #2c539e 0%,#2c539e 100%); /* Chrome10-25,Safari5.1-6 */
+  color: white;
+}
+
+.cancel-button {
+  width: 22%;
+  text-align: center;
+}

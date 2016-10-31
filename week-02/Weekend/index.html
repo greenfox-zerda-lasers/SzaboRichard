@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css" media="screen" title="no title">
+    <title>Form</title>
+  </head>
+  <body>
+    <main>
+      <nav>
+        <h1>Profil</h1>
+      </nav>
+      <form class="main-data-wrap" action="index.html" method="post">
+        <!--Left data column start -->
+        <section class="personal-data-Left">
+          <section class="personal-data-inner headerContact">
+            <h1>Személyes adatok</h1>
+          </section>
+
+          <section class="personal-data-inner nameField">
+            <label for="name">Név</label>
+            <input type="text" name="name" value="" placeholder="" required="true">
+          </section>
+
+          <section class="personal-data-inner ageGender">
+            <section class="personal-data-inner__born">
+              <label for="born">Születési éved</label>
+              <input type="text" name="born" value="" placeholder="pl. 1984">
+            </section>
+
+            <section class="personal-data-inner__gender">
+              <h1>Nemed</h1>
+
+              <input type="checkbox" name="genderW" value="">
+              <label for="genderW">nő</label>
+
+              <input type="checkbox" name="genderM" value="">
+              <label for="genderM">férfi</label>
+            </section>
+          </section>
+
+          <section class="personal-data-inner checkList">
+            <h1>Milyen márkát szeretsz?</h1>
+            <section class="personal-data-inner__checkList">
+              <section class="checkList__leftCol">
+                <section>
+                  <input type="checkbox" class="marka" value="">
+                  <label for="marka">Adidas</label>
+                </section>
+                <section>
+                  <input type="checkbox" class="marka" value="" >
+                  <label for="marka">Apple</label>
+                </section>
+                <section>
+                  <input type="checkbox" class="marka" value="">
+                  <label for="marka">Coca-Cola</label>
+                </section>
+                <section>
+                  <input type="checkbox" class="marka" value="">
+                  <label for="marka">Mazda</label>
+                </section>
+                <section>
+                  <input type="checkbox" class="marka" value="">
+                  <label for="marka">Nike</label>
+                </section>
+              </section>
+
+              <section class="checkList__rightCol">
+                <section>
+                  <input type="checkbox" class="marka" value="">
+                  <label for="marka">Opel</label>
+                </section>
+                <section>
+                  <input type="checkbox" class="marka" value="">
+                  <label for="marka">Ray-ban</label>
+                </section>
+                <section>
+                  <input type="checkbox" class="marka" value="">
+                  <label for="marka">Starbucks</label>
+                </section>
+                <section>
+                  <input type="checkbox" class="marka" value="">
+                  <label for="marka">Tesla</label>
+                </section>
+                <section>
+                  <input type="checkbox"class="marka"value="">                      <label for="marka">Yahoo</label>
+                </section>
+              </section>
+             </section>
+             <h2>Többet is választhatsz</h2>
+            </section>
+
+        </section>
+        <!-- Left data column end -->
+        <!-- Right data column start -->
+        <section class="contact-Right">
+          <section class="contact-inner headerContact">
+            <h1>Kapcsolat</h1>
+          </section>
+
+          <section class="contact-inner phoneNum">
+            <label for="telefonszam">Telefonszám</label>
+            <input id="telefonszam" type="text" name="name" value="" placeholder="+36 -- --- ----">
+          </section>
+
+          <section class="contact-inner email">
+            <label for="emailC">Email-cím</label>
+            <input id="emailC" type="email" name="name" value="" placeholder="nev@domain.hu">
+          </section>
+
+          <section class="contact-inner facebook">
+            <label for="facebookP">Facebook</label>
+            <input id="facebookP" type="url" name="name" value="" placeholder="htttp//facebook.com">
+          </section>
+
+          <section class="contact-inner twitter">
+            <label for="twitterP">Twitter</label>
+            <input id="twitterP" type="url" name="name" value="" placeholder="htttp//twitter.com/">
+          </section>
+
+          <section class="contact-inner houseType">
+            <label for="houses">Milyen házban laksz?</label>
+            <select class="houses" name="">
+              <option>Válassz típust</option>
+              <option>Társasház</option>
+              <option>Családiház</option>
+              <option>Panel</option>
+            </select>
+          </section>
+        </section>
+        <!-- Right data column end -->
+        <!-- cv upload part  -->
+        <section class="introduction-cv-upload">
+          <label for="textfield">Bemutatkozás</label>
+            <!-- <input type="text" name="textfield" value="" placeholder=""> -->
+            <textarea name="textfield" rows="8" cols="40" placeholder="Írj magadról pár mondatot"></textarea>
+
+          <label for="cvup">Cv feltöltése</label>
+          <label id="inputfileLabel">file kiválasztása
+           <input type="file" name="name" value="">
+          </label>
+
+          <section class="terms-of-useCheck">
+            <input type="checkbox" name="name" value="">
+            <label for="">Elfogadom a <a href="#">felhasználói feltételeket</a></label>
+          </section>
+        </section>
+        <!-- End of cv upload part  -->
+        <section class="bottom-two-primaryBut">
+          <button class="save-button" type="button" name="save" value="">Mentés</button>
+          <button class="cancel-button" type="button" name="cancel" value="">Űrlap Törlése</button>
+        </section>
+      </form>
+    </main>
+  </body>
+</html>
