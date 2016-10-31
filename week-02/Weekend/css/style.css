@@ -4,7 +4,6 @@ main {
   width: 80%;
   display: flex;
   flex-wrap: wrap;
-  border: 1px solid red;
 }
 
 nav {
@@ -20,7 +19,6 @@ nav h1 {
 .main-data-wrap {
   display: flex;
   flex-wrap: wrap;
-  border: 1px solid blue;
   width: 90%;
   margin: 2% 10%;
 }
