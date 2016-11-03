@@ -58,7 +58,7 @@ if j1 > j2 // 2 and j1 < j2 **2:
 
 #11
 k = 1521
-# tell if k is dividable by 3 or 5
+# t<clear></clear>ell if k is dividable by 3 or 5
 if k % 3 == 0 or k % 5 == 0:
     print(k)
 
@@ -284,7 +284,7 @@ for i in range(21):
     else:
         print('hah paratlan')
 
-#38
+#3
 # Write a program that prints the numbers from 1 to 100.
 # But for multiples of three print "Fizz" instead of the number
 # and for the multiples of five print "Buzz".
@@ -296,3 +296,13 @@ for i in range(1,101,1):
         print("Fizz")
     elif i % 5 == 0:
         print("Buzz")
+
+#xmas tree
+# item = '*'
+# 
+# for i in range(11):
+#     item += '*'
+#     print(item)
+#     for x in range(11):
+#         item -= '*'
+#         print(item)
