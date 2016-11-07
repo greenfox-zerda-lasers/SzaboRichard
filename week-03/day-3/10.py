@@ -28,11 +28,11 @@ class TriangleDraw():
 
     def draw_stars(self, lines):
         j = 1
-        y = line
-        for i in range(line):
+        y = lines
+        for i in range(lines):
             print(' ' * y + j * ('*'))
             j += 2
             y -= 1
 
 triangle = TriangleDraw()
-triangle.draw_stars(5)
+triangle.draw_stars(10)
