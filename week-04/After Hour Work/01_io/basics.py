@@ -16,29 +16,21 @@ def readline(file_name, number):
 print(readline('texts/zen_of_python.txt', 2))
 
 # 3. Create a method that gets a long sentence as param and gives back the contained words in a list
-def words(sentence):
-    temp = ""
-    for i in sentence:
-        if  i != ".":
-          temp += i
-    return temp.split()
-
+def sentence_splitter(param):
+    words = []
+    words = param.split()
+    return words
 # 4. Create a method that gets a list of words and creates a sentence with the words separated by spaces
-def sentence(words):
-    return " ".join(words) + '.'
-
+def create_sentence(parma):
+    temp = ""
+    for i in param:
+        temp += ' '+ i
+    return temp[1:] + '.'
 
 # 5. Create a method that gets a string and gives back the character codes in a list
-def char_codes(string):
+def string_toCode(param):
     temp = []
-    for i in string:
-        temp += [ord(i)]
+    for i in range(len(param)):
+        temp.append(chr(ord[i])
     return temp
-
 # 6. Create a method that gets a list of integers and gives back a string which characters are created from the numbers used as character codes
-def string(char_codes):
-        temp = ""
-        for i in char_codes:
-            temp += chr(i)
-        print(temp)
-        return temp

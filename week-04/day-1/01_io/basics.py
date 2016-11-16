@@ -5,7 +5,7 @@ def readfile(file_name):
     f.close()
     return result
 
-#print(readfile('texts/zen_of_python.txt'))
+print(readfile('texts/zen_of_python.txt'))
 
 # 2. Create a method that gets a file_name and a number as param and reads the numberth line of the file
 def readline(file_name, number):
@@ -16,12 +16,16 @@ def readline(file_name, number):
 print(readline('texts/zen_of_python.txt', 2))
 
 # 3. Create a method that gets a long sentence as param and gives back the contained words in a list
-def words(sentence):
-    temp = ""
-    for i in sentence:
-        if i != '.':
-            temp += i
-    return temp.split()
+# def words(sentence):
+#     temp = ""
+#     for i in sentence:
+#         if i != '.':
+#             temp += i
+#     return temp.split()
+def sentence_splitter(param):
+    words = []
+    words = "".split(param)
+    return words
 
 # 4. Create a method that gets a list of words and creates a sentence with the words separated by spaces
 def sentence(words):
