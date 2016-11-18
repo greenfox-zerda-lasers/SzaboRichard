@@ -14,6 +14,12 @@ class TodoView:
             -c   Completes an task""",
         }
 
+    def add_task_error_handling_print(self):
+        print("No task is provided")
+
+    def remove_task_error_handling_print(self):
+        print("No index is provided")
+
     def print_this_shitty_file(self, data):
         for i, value in enumerate(data,start=1):
             print(str(i), value.rstrip())

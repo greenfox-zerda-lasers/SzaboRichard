@@ -5,7 +5,7 @@ from todo_model import Todo_model
 class TodoCtrl:
     def __init__(self):
         self.view = TodoView()
-        self.model = Todo_model()
+        self.model = Todo_model("test.txt")
         self.input_list = sys.argv
         self.input_l_len = len(self.input_list)
         self.input_empty_print()
@@ -20,11 +20,19 @@ class TodoCtrl:
     def input_checker(self):
         if self.input_list[1] == '-l':
             self.if_shitty_file_is_empty_or_not()
-        if self.input_list[2] == '-a':
-            pass
+        if self.input_list[1] == '-a' and self.input_l_len == 2:
+            self.view.add_task_error_handling_print()
+        elif self.input_list[1] == '-a' and self.input_l_len > 2:
+            self.model.file_write(self.input_list[2])
+            self.if_shitty_file_is_empty_or_not()
+        if self.input_list[1] == '-r' and self.input_l_len == 2:
+            self.view.remove_task_error_handling_print()
+        if self.input_list[1] == '-r' and self.input_l_len > 2:
+            self.model.file_delete_by_lines(self.input_list[2])
+
 
     def if_shitty_file_is_empty_or_not(self):
-        data = self.model.file_open_read("test.txt")
+        data = self.model.file_open_read()
         if data == []:
             self.view.print_empty_shitty_file()
         else:
