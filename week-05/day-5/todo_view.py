@@ -13,3 +13,10 @@ class TodoView:
             -r   Removes an task
             -c   Completes an task""",
         }
+
+    def print_this_shitty_file(self, data):
+        for i, value in enumerate(data,start=1):
+            print(str(i), value.rstrip())
+
+    def print_empty_shitty_file(self):
+        print("No todos for today! :)")
