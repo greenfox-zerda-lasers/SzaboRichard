@@ -31,15 +31,12 @@ class GameMap:
     def create_boss_object(self, postionx, postiony):
         self.characters["boss"] = self.canvas.create_image(postionx*72,postiony*72, image = self.bossimage, anchor = NW)
 
-    # def create_skeletons_by_for(self, skeleton_list):
-    #     for skeleton in skeleton_list:
-    #         self.create_skeleton_object(skeleton)
-    #
-    # def create_skeleton_object(self, skeleton):
-    #     self.characters["skeletons"].append(self.canvas.create_image(skeleton["x"]*72, skeleton["y"]*72, image = self.skeleton, anchor = NW))
+    def create_skeletons_by_for(self, skeleton_list):
+        for skeleton in skeleton_list:
+            self.create_skeleton_object(skeleton)
 
-    def create_skeleton_object(self, postionx, postiony):
-        self.characters["skeletons"].append(self.canvas.create_image(postionx*72,postiony*72, image = self.skeleton, anchor = NW))
+    def create_skeleton_object(self, skeleton):
+        self.characters["skeletons"].append(self.canvas.create_image(skeleton.postion["x"]*72, skeleton.postion["y"]*72, image = self.skeleton, anchor = NW))
 
     def move(self, who, postionx, postiony, index=None):
         if type(index) == int:
@@ -57,11 +54,11 @@ class GameMap:
         label3.pack()
         self.canvas.create_window(720, 400, window=label_frame, anchor = W)
 
-    def draw_label_enemies(self, hp, dp, sp):
+    def draw_label_enemies(self, healthpoint = 0, defencpoimt = 0, strikepoint = 0):
         label_frame = LabelFrame(self.canvas, text="Evil Enemy: ")
-        label = Label(label_frame, text="Healthpoint: "+ str(hp))
-        label2 = Label(label_frame, text="Defencepoint: "+ str(dp))
-        label3 = Label(label_frame, text="Strikepoint: "+ str(sp))
+        label = Label(label_frame, text="Healthpoint: "+ str(healthpoint))
+        label2 = Label(label_frame, text="Defencepoint: "+ str(defencpoimt))
+        label3 = Label(label_frame, text="Strikepoint: "+ str(strikepoint))
         label.pack()
         label2.pack()
         label3.pack()
