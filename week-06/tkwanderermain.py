@@ -1,5 +1,5 @@
 from tkwandererview import GameMap
-from tkwanderermodel import Character, Map_data, Hero, Skeleton
+from tkwanderermodel import Map_data, Character, Hero, Skeleton
 import random
 
 class TkwandererMainControl:
@@ -9,17 +9,23 @@ class TkwandererMainControl:
         self.hero_data = Hero()
         self.skeleton_data = Skeleton()
         self.model_data_Game = Character()
+# ----------Draw map, hero, boss, skeleton(s)
         self.viewGameMap.draw_map(self.map_data.tilemap)
         self.viewGameMap.create_hero_object(self.hero_data.postion["x"], self.hero_data.postion["y"])
+        self.viewGameMap.create_skeleton_object(self.skeleton_data.postion["x"], self.skeleton_data.postion["y"])
         self.viewGameMap.create_boss_object(7,5)
+        # self.skeleton_position_list = [self.skeleton_data.postion["x"], self.skeleton_data.postion["y"]]
+        # self.viewGameMap.create_skeletons_by_for(self.map_data.add_more_skeleton())
         # self.viewGameMap.create_skeleton_object(2,6)
-        self.viewGameMap.create_skeleton_object(self.skeleton_data.postion["x"],0)
+# ---------- 2 labels + indexer
+        self.viewGameMap.draw_label_hero(2,4,6)
+        self.viewGameMap.draw_label_enemies(10,2,1)
         self.movement_indexer = 0
+# --------- char movement draw end
         self.character_step()
         self.viewGameMap.canvas.focus_set()
         self.viewGameMap.mainloop_draw()
 
-        # wasd validator method, még egy függvény amibe bele a wasdos methodok
 
     # def add_and_draw_skeleton(self):
     #     self.model_data_Game.add_more_skeleton(3)
@@ -75,13 +81,14 @@ class TkwandererMainControl:
     def move_enemies(self):
         if self.movement_indexer % 2 == 0:
             x,y = random.choice(self.skeleton_data.monster_direction)
-            print(x,y)
-            print(self.skeleton_data.postion["x"]+x, self.skeleton_data.postion["y"]+y)
-            print(self.wall_checker(self.skeleton_data.postion["x"]+x, self.skeleton_data.postion["y"]+y))
+            # print(x,y)
+            # print(self.skeleton_data.postion["x"]+x, self.skeleton_data.postion["y"]+y)
+            # print(self.wall_checker(self.skeleton_data.postion["x"]+x, self.skeleton_data.postion["y"]+y))
             if self.wall_checker(self.skeleton_data.postion["x"]+x, self.skeleton_data.postion["y"]+y):
                 self.skeleton_data.postion["x"] += x
                 self.skeleton_data.postion["y"] += y
-                self.viewGameMap.move("skeletons", x, y, 0)
+                self.viewGameMap.move("skeletons", x, y)
+                # self.viewGameMap.move("skeletons", x, y, 0)
 
 
     def wall_checker(self, postionx, postiony):

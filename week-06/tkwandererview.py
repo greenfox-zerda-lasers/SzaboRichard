@@ -5,7 +5,7 @@ class GameMap:
     def __init__(self):
         self.tile = 72
         self.root = Tk()
-        self.canvas = Canvas(self.root,width= 11*72, height= 11*72)
+        self.canvas = Canvas(self.root,width= 11.5*72, height= 11*72)
         self.canvas.pack()
         self.floorimage = PhotoImage(file = "./floor.png")
         self.wallimage = PhotoImage(file = "./wall.png")
@@ -27,8 +27,6 @@ class GameMap:
     def create_hero_object(self, postionx, postiony):
         self.characters["hero"] = self.canvas.create_image(postionx*72, postiony*72, image = self.hero_images["down"], anchor= NW)
 
-    # def move_hero_up(self, postionx, postiony):
-    #     self.canvas.create_image(postionx*72, postiony*72, image = self.hero_images["up"], anchor= NW)
 
     def create_boss_object(self, postionx, postiony):
         self.characters["boss"] = self.canvas.create_image(postionx*72,postiony*72, image = self.bossimage, anchor = NW)
@@ -36,6 +34,9 @@ class GameMap:
     # def create_skeletons_by_for(self, skeleton_list):
     #     for skeleton in skeleton_list:
     #         self.create_skeleton_object(skeleton)
+    #
+    # def create_skeleton_object(self, skeleton):
+    #     self.characters["skeletons"].append(self.canvas.create_image(skeleton["x"]*72, skeleton["y"]*72, image = self.skeleton, anchor = NW))
 
     def create_skeleton_object(self, postionx, postiony):
         self.characters["skeletons"].append(self.canvas.create_image(postionx*72,postiony*72, image = self.skeleton, anchor = NW))
@@ -46,11 +47,27 @@ class GameMap:
         else:
             self.canvas.move(self.characters[who], postionx*72, postiony*72)
 
+    def draw_label_hero(self, hp, dp, sp):
+        label_frame = LabelFrame(self.canvas, text="Hero:")
+        label = Label(label_frame, text="Healthpoint: "+ str(hp))
+        label2 = Label(label_frame, text="Defencepoint: "+ str(dp))
+        label3 = Label(label_frame, text="Strikepoint: "+ str(sp))
+        label.pack()
+        label2.pack()
+        label3.pack()
+        self.canvas.create_window(720, 400, window=label_frame, anchor = W)
+
+    def draw_label_enemies(self, hp, dp, sp):
+        label_frame = LabelFrame(self.canvas, text="Evil Enemy: ")
+        label = Label(label_frame, text="Healthpoint: "+ str(hp))
+        label2 = Label(label_frame, text="Defencepoint: "+ str(dp))
+        label3 = Label(label_frame, text="Strikepoint: "+ str(sp))
+        label.pack()
+        label2.pack()
+        label3.pack()
+        self.canvas.create_window(720, 600, window=label_frame, anchor = W)
+
+
+
     def mainloop_draw(self):
         self.root.mainloop()
-
-
-# class Stat_Label:
-#     pass
-
-# mapom = GameMap()
