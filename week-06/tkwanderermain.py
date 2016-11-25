@@ -22,7 +22,7 @@ class TkwandererMainControl:
 # ---------- 2 labels + indexer
         self.label_update_hero = (self.hero_data.healthpoint, self.hero_data.defencpoimt, self.hero_data.strikepoint)
         self.viewGameMap.draw_label_hero(self.label_update_hero)
-        self.label_update = ("Empty" , "Empty", "Empty")
+        self.label_update = ("Secret" , "Secret", "Secret")
         self.viewGameMap.draw_label_enemies(self.label_update)
         self.movement_indexer = 0
         self.is_fight = False
@@ -142,6 +142,10 @@ class TkwandererMainControl:
                 self.viewGameMap.enemyhp.config(text="Healthpoint: "+str(self.label_update[0]))
                 self.viewGameMap.enemydp.config(text="Defencepoint: "+str(self.label_update[1]))
                 self.viewGameMap.enemysp.config(text="Strikepoint: "+str(self.label_update[2]))
+                self.label_update_hero = (self.hero_data.healthpoint, self.hero_data.defencpoimt, self.hero_data.strikepoint)
+                self.viewGameMap.herohp.config(text="Healthpoint: "+str(self.label_update_hero[0]))
+                self.viewGameMap.herodp.config(text="Defencepoint: "+str(self.label_update_hero[1]))
+                self.viewGameMap.herosp.config(text="Strikepoint: "+str(self.label_update_hero[2]))
                 return self.label_update, self.label_update_hero
 
         if self.boss_data.postion["x"] == self.hero_data.postion["x"] and self.boss_data.postion["y"] == self.hero_data.postion["y"]:
@@ -150,6 +154,10 @@ class TkwandererMainControl:
                 self.viewGameMap.enemyhp.config(text="Healthpoint: "+str(self.label_update[0]))
                 self.viewGameMap.enemydp.config(text="Defencepoint: "+str(self.label_update[1]))
                 self.viewGameMap.enemysp.config(text="Strikepoint: "+str(self.label_update[2]))
+                self.label_update_hero = (self.hero_data.healthpoint, self.hero_data.defencpoimt, self.hero_data.strikepoint)
+                self.viewGameMap.herohp.config(text="Healthpoint: "+str(self.label_update_hero[0]))
+                self.viewGameMap.herodp.config(text="Defencepoint: "+str(self.label_update_hero[1]))
+                self.viewGameMap.herosp.config(text="Strikepoint: "+str(self.label_update_hero[2]))
                 return self.label_update, self.label_update_hero
 
     def wall_checker(self, postionx, postiony):

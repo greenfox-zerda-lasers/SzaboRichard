@@ -1,5 +1,6 @@
 from tkinter import *
 from PIL import Image, ImageTk
+import random
 
 class GameMap:
     def __init__(self):
@@ -9,10 +10,15 @@ class GameMap:
         self.im = ImageTk.PhotoImage(Image.open("C:/Users/ignoc/Desktop/Lightning/Demo day/sponsor demo/background.jpg"))
         self.canvas.pack()
         Canvas_Image = self.canvas.create_image(0,0, image=self.im, anchor="nw")
-        self.floorimage = PhotoImage(file = "./floor.png")
+        # self.floorimage = PhotoImage(file = "./floor.png")
+        self.floorimage = PhotoImage(file = "./S500M801.png")
         self.wallimage = PhotoImage(file = "./wall.png")
         self.bossimage = PhotoImage(file = "./boss.png")
-        self.skeleton = PhotoImage(file = "./skeleton.png")
+        self.reptilian = PhotoImage(file = "./skeleton.png")
+        self.enemy = PhotoImage(file = "./evildemon.png")
+        self.dog = PhotoImage(file = "./Andariel_(Diablo_II).png")
+        self.ghost = PhotoImage(file = "./ghost.png")
+        self.enemies_img_list = [self.reptilian, self.enemy, self.ghost, self.dog]
         self.characters = { "hero" : None, "boss" : None, "skeletons" : []}
         self.hero_images = { "down": PhotoImage(file = "./hero-down.png"), "up" : PhotoImage(file = "./hero-up.png"), "left" : PhotoImage(file = "./hero-left.png"), "right" : PhotoImage(file = "./hero-right.png")}
 
@@ -37,7 +43,7 @@ class GameMap:
             self.create_skeleton_object(skeleton)
 
     def create_skeleton_object(self, skeleton):
-        self.characters["skeletons"].append(self.canvas.create_image(skeleton.postion["x"]*72, skeleton.postion["y"]*72, image = self.skeleton, anchor = NW))
+        self.characters["skeletons"].append(self.canvas.create_image(skeleton.postion["x"]*72, skeleton.postion["y"]*72, image = random.choice(self.enemies_img_list), anchor = NW))
 
     def move(self, who, postionx, postiony, index=None):
         if type(index) == int:

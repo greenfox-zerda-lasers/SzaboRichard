@@ -24,6 +24,7 @@ class Character:
         self.strikepoint = 0
         self.d6roll = random.randint(1, 6)
         self.alive = True
+        self.got_key = False
         if self.healthpoint <= 0:
             self.healthpoint = 0
 
@@ -36,9 +37,11 @@ class Character:
                 defender.is_alive()
             else:
                 defender.healthpoint -= (self.strikepoint/2)
-        else:
-            self.healthpoint -= (defender.strikepoint-self.healthpoint)
-            self.is_alive()
+        # else:
+        if damage < 0:
+            self.healthpoint -= (defender.strikepoint/2)
+        print(self.healthpoint)
+        self.is_alive()
 
     def is_alive(self):
         if self.healthpoint > 0:
@@ -78,6 +81,9 @@ class Skeleton(Character):
             self.postion["y"] = postiony
         else:
             self.skeletons_not_in_walls()
+
+    def has_key(self):
+        self.got_key = True
 
     # x y hasonlítgatás iterálás skel_listen, +boss should fight
     # should fight = false amikor végig a skeletonoon amikor megegy az x és az y akkor true ha nem akkor false
