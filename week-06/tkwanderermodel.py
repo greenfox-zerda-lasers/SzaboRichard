@@ -24,12 +24,18 @@ class Character:
         self.strikepoint = 0
         self.d6roll = random.randint(1, 6)
         self.alive = True
+        if self.healthpoint <= 0:
+            self.healthpoint = 0
 
     def strike(self, defender):
         self.d6roll = random.randint(1, 6)
+        damage = self.strikepoint-defender.defencpoimt
         if (self.strikepoint + 2*self.d6roll) > defender.defencpoimt:
-            defender.healthpoint -= (self.strikepoint-defender.defencpoimt)
-            defender.is_alive()
+            if damage > 0:
+                defender.healthpoint -= damage
+                defender.is_alive()
+            else:
+                defender.healthpoint -= (self.strikepoint/2)
         else:
             self.healthpoint -= (defender.strikepoint-self.healthpoint)
             self.is_alive()
@@ -46,10 +52,10 @@ class Character:
 class Hero(Character):
     def __init__(self):
         super().__init__()
-        self.d6roll = random.randint(1, 6)
         self.healthpoint = 20 + 3 * self.d6roll
         self.defencpoimt = 2 * self.d6roll
         self.strikepoint = 5 + self.d6roll
+        self.d6roll = random.randint(1, 6)
         self.postion = {"x" : 0, "y" : 0}
 
 class Skeleton(Character):
@@ -57,7 +63,7 @@ class Skeleton(Character):
         super().__init__()
         self.d6roll = random.randint(1, 6)
         self.healthpoint = 2 * self.d6roll
-        self.defencpoimt = 2 * self.d6roll
+        self.defencpoimt = 2 * self.d6roll-2
         self.strikepoint = self.d6roll
         self.map_data = Map_data()
         self.postion = {"x": 0, "y" : 0}

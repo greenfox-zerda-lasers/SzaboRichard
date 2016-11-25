@@ -20,7 +20,8 @@ class TkwandererMainControl:
         self.viewGameMap.create_skeletons_by_for(self.skeleton_list)
 
 # ---------- 2 labels + indexer
-        self.viewGameMap.draw_label_hero(self.hero_data.healthpoint, self.hero_data.defencpoimt, self.hero_data.strikepoint)
+        self.label_update_hero = (self.hero_data.healthpoint, self.hero_data.defencpoimt, self.hero_data.strikepoint)
+        self.viewGameMap.draw_label_hero(self.label_update_hero)
         self.label_update = ("Empty" , "Empty", "Empty")
         self.viewGameMap.draw_label_enemies(self.label_update)
         self.movement_indexer = 0
@@ -46,7 +47,7 @@ class TkwandererMainControl:
         self.viewGameMap.canvas.bind("<space>", self.fight_event)
 
     def movement_phases(self, event):
-        self.enemy_stats_writer_skeleton()
+        self.enemy_stats_writer_skeleton_or_boss()
         self.movement_indexer+= 1
         self.move_enemies()
         if event.keysym == "w":
@@ -61,6 +62,7 @@ class TkwandererMainControl:
     def fight_event(self, event):
         if event.keysym == "space":
             self.fight()
+            self.enemy_stats_writer_skeleton_or_boss()
 
     def move_down(self):
         if self.wall_checker(self.hero_data.postion["x"], self.hero_data.postion["y"]+1):
@@ -118,7 +120,6 @@ class TkwandererMainControl:
                     print(enemy.healthpoint)
                     self.viewGameMap.canvas.delete(self.viewGameMap.characters["boss"])
             else:
-                # print(self.viewGameMap.characters["skeletons"][self.skeleton_list.index(enemy)])
                 if enemy.healthpoint <= 0:
                     self.viewGameMap.canvas.delete(self.viewGameMap.characters["skeletons"][self.skeleton_list.index(enemy)])
 
@@ -134,18 +135,22 @@ class TkwandererMainControl:
                 return self.boss_data
         return None
 
-    def enemy_stats_writer_skeleton(self):
+    def enemy_stats_writer_skeleton_or_boss(self):
         for skeleton in self.skeleton_list:
             if skeleton.postion["x"] == self.hero_data.postion["x"] and skeleton.postion["y"] == self.hero_data.postion["y"]:
                 self.label_update = (skeleton.healthpoint, skeleton.defencpoimt, skeleton.strikepoint)
-                # print(self.label_update)
-                # self.viewGameMap.canvas.draw_label_enemies.pack_forget()
-                self.viewGameMap.enemyhp.config(text=self.label_update[0])
-                self.viewGameMap.enemydp.config(text=self.label_update[1])
-                self.viewGameMap.enemysp.config(text=self.label_update[2])
-                # self.viewGameMap.draw_label_enemies(self.label_update)
-                return self.label_update
+                self.viewGameMap.enemyhp.config(text="Healthpoint: "+str(self.label_update[0]))
+                self.viewGameMap.enemydp.config(text="Defencepoint: "+str(self.label_update[1]))
+                self.viewGameMap.enemysp.config(text="Strikepoint: "+str(self.label_update[2]))
+                return self.label_update, self.label_update_hero
 
+        if self.boss_data.postion["x"] == self.hero_data.postion["x"] and self.boss_data.postion["y"] == self.hero_data.postion["y"]:
+            if self.boss_data.alive is True:
+                self.label_update = (self.boss_data.healthpoint, self.boss_data.defencpoimt, self.boss_data.strikepoint)
+                self.viewGameMap.enemyhp.config(text="Healthpoint: "+str(self.label_update[0]))
+                self.viewGameMap.enemydp.config(text="Defencepoint: "+str(self.label_update[1]))
+                self.viewGameMap.enemysp.config(text="Strikepoint: "+str(self.label_update[2]))
+                return self.label_update, self.label_update_hero
 
     def wall_checker(self, postionx, postiony):
         if len(self.map_data.tilemap)-1 < postiony or  postiony < 0:

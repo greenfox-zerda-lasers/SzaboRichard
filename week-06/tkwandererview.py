@@ -5,8 +5,10 @@ class GameMap:
     def __init__(self):
         self.tile = 72
         self.root = Tk()
-        self.canvas = Canvas(self.root,width= 11.5*72, height= 11*72)
+        self.canvas = Canvas(self.root,width= 12*72, height= 11*72)
+        self.im = ImageTk.PhotoImage(Image.open("C:/Users/ignoc/Desktop/Lightning/Demo day/sponsor demo/background.jpg"))
         self.canvas.pack()
+        Canvas_Image = self.canvas.create_image(0,0, image=self.im, anchor="nw")
         self.floorimage = PhotoImage(file = "./floor.png")
         self.wallimage = PhotoImage(file = "./wall.png")
         self.bossimage = PhotoImage(file = "./boss.png")
@@ -43,15 +45,15 @@ class GameMap:
         else:
             self.canvas.move(self.characters[who], postionx*72, postiony*72)
 
-    def draw_label_hero(self, hp, dp, sp):
+    def draw_label_hero(self, hero):
         label_frame = LabelFrame(self.canvas, text="Hero:")
-        herohp = Label(label_frame, text="Healthpoint: "+ str(hp))
-        herodp = Label(label_frame, text="Defencepoint: "+ str(dp))
-        herosp = Label(label_frame, text="Strikepoint: "+ str(sp))
-        herohp.pack()
-        herodp.pack()
-        herosp.pack()
-        self.canvas.create_window(720, 400, window=label_frame, anchor = W)
+        self.herohp = Label(label_frame, text="Healthpoint: "+ str(hero[0]))
+        self.herodp = Label(label_frame, text="Defencepoint: "+ str(hero[1]))
+        self.herosp = Label(label_frame, text="Strikepoint: "+ str(hero[2]))
+        self.herohp.pack()
+        self.herodp.pack()
+        self.herosp.pack()
+        self.canvas.create_window(720, 50, window=label_frame, anchor = W)
 
     def draw_label_enemies(self, data):
         label_frame = LabelFrame(self.canvas, text="Evil Enemy: ")
@@ -61,7 +63,7 @@ class GameMap:
         self.enemyhp.pack()
         self.enemydp.pack()
         self.enemysp.pack()
-        self.canvas.create_window(720, 600, window=label_frame, anchor = W)
+        self.canvas.create_window(720, 200, window=label_frame, anchor = W)
 
 
 
