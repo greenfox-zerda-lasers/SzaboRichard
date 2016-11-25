@@ -22,7 +22,6 @@ class GameMap:
                     self.canvas.create_image(column*72,row*72, image = self.floorimage, anchor= NW)
                 else:
                     self.canvas.create_image(column*72,row*72, image = self.wallimage, anchor= NW)
-        # self.root.mainloop()
 
     def create_hero_object(self, postionx, postiony):
         self.characters["hero"] = self.canvas.create_image(postionx*72, postiony*72, image = self.hero_images["down"], anchor= NW)
@@ -46,22 +45,22 @@ class GameMap:
 
     def draw_label_hero(self, hp, dp, sp):
         label_frame = LabelFrame(self.canvas, text="Hero:")
-        label = Label(label_frame, text="Healthpoint: "+ str(hp))
-        label2 = Label(label_frame, text="Defencepoint: "+ str(dp))
-        label3 = Label(label_frame, text="Strikepoint: "+ str(sp))
-        label.pack()
-        label2.pack()
-        label3.pack()
+        herohp = Label(label_frame, text="Healthpoint: "+ str(hp))
+        herodp = Label(label_frame, text="Defencepoint: "+ str(dp))
+        herosp = Label(label_frame, text="Strikepoint: "+ str(sp))
+        herohp.pack()
+        herodp.pack()
+        herosp.pack()
         self.canvas.create_window(720, 400, window=label_frame, anchor = W)
 
-    def draw_label_enemies(self, healthpoint = 0, defencpoimt = 0, strikepoint = 0):
+    def draw_label_enemies(self, data):
         label_frame = LabelFrame(self.canvas, text="Evil Enemy: ")
-        label = Label(label_frame, text="Healthpoint: "+ str(healthpoint))
-        label2 = Label(label_frame, text="Defencepoint: "+ str(defencpoimt))
-        label3 = Label(label_frame, text="Strikepoint: "+ str(strikepoint))
-        label.pack()
-        label2.pack()
-        label3.pack()
+        self.enemyhp = Label(label_frame, text="Healthpoint: "+ str(data[0]))
+        self.enemydp = Label(label_frame, text="Defencepoint: "+ str(data[1]))
+        self.enemysp = Label(label_frame, text="Strikepoint: "+ str(data[2]))
+        self.enemyhp.pack()
+        self.enemydp.pack()
+        self.enemysp.pack()
         self.canvas.create_window(720, 600, window=label_frame, anchor = W)
 
 

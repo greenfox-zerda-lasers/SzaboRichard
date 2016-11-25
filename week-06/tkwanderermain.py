@@ -11,16 +11,18 @@ class TkwandererMainControl:
         self.model_data_Game = Character()
         self.boss_data = Boss()
         self.skeleton_list = []
+
 # ----------Draw map, hero, boss, skeleton(s)
         self.viewGameMap.draw_map(self.map_data.tilemap)
         self.add_more_skeleton()
         self.viewGameMap.create_hero_object(self.hero_data.postion["x"], self.hero_data.postion["y"])
         self.viewGameMap.create_boss_object(self.boss_data.postion["x"], self.boss_data.postion["y"])
         self.viewGameMap.create_skeletons_by_for(self.skeleton_list)
-        # self.viewGameMap.create_skeleton_object(2,6)
+
 # ---------- 2 labels + indexer
         self.viewGameMap.draw_label_hero(self.hero_data.healthpoint, self.hero_data.defencpoimt, self.hero_data.strikepoint)
-        self.viewGameMap.draw_label_enemies(self.enemy_stats_writer_skeleton())
+        self.label_update = ("Empty" , "Empty", "Empty")
+        self.viewGameMap.draw_label_enemies(self.label_update)
         self.movement_indexer = 0
         self.is_fight = False
 # --------- char movement draw end
@@ -44,6 +46,7 @@ class TkwandererMainControl:
         self.viewGameMap.canvas.bind("<space>", self.fight_event)
 
     def movement_phases(self, event):
+        self.enemy_stats_writer_skeleton()
         self.movement_indexer+= 1
         self.move_enemies()
         if event.keysym == "w":
@@ -54,11 +57,6 @@ class TkwandererMainControl:
             self.move_right()
         if event.keysym == "a":
             self.move_left()
-        # if event.keysym == "sapce":
-        #     self.fight()
-        # print(self.movement_indexer)
-
-        # ezeknek a charoknak a letiltása
 
     def fight_event(self, event):
         if event.keysym == "space":
@@ -110,15 +108,9 @@ class TkwandererMainControl:
 
 # ----------- FIGHTING
 
-    # def skeleton_iterating(self):
-    #     skeleton_index = 0
-    #     for skeleton in self.skeleton_list:
-    #         skeleton_index += 1
-    #         return skeleton
 
     def fight(self):
         enemy = self.is_fighting()
-        # self.is_fight = True
         if enemy is not None:
             self.hero_data.strike(enemy)
             if enemy == self.boss_data:
@@ -129,25 +121,30 @@ class TkwandererMainControl:
                 # print(self.viewGameMap.characters["skeletons"][self.skeleton_list.index(enemy)])
                 if enemy.healthpoint <= 0:
                     self.viewGameMap.canvas.delete(self.viewGameMap.characters["skeletons"][self.skeleton_list.index(enemy)])
-                # if enemy.healthpoint <= 0:
+
 
     def is_fighting(self):
         for skeleton in self.skeleton_list:
             if skeleton.postion["x"] == self.hero_data.postion["x"] and skeleton.postion["y"] == self.hero_data.postion["y"]:
                 if skeleton.alive is True:
                     return skeleton
-                # is alive funtcion él-e még az adott dolog
 
         if self.boss_data.postion["x"] == self.hero_data.postion["x"] and self.boss_data.postion["y"] == self.hero_data.postion["y"]:
             if self.boss_data.alive is True:
                 return self.boss_data
-        # self.is_fight = True
         return None
 
     def enemy_stats_writer_skeleton(self):
         for skeleton in self.skeleton_list:
             if skeleton.postion["x"] == self.hero_data.postion["x"] and skeleton.postion["y"] == self.hero_data.postion["y"]:
-                return skeleton.healthpoint, skeleton.defencpoimt, skeleton.strikepoint
+                self.label_update = (skeleton.healthpoint, skeleton.defencpoimt, skeleton.strikepoint)
+                # print(self.label_update)
+                # self.viewGameMap.canvas.draw_label_enemies.pack_forget()
+                self.viewGameMap.enemyhp.config(text=self.label_update[0])
+                self.viewGameMap.enemydp.config(text=self.label_update[1])
+                self.viewGameMap.enemysp.config(text=self.label_update[2])
+                # self.viewGameMap.draw_label_enemies(self.label_update)
+                return self.label_update
 
 
     def wall_checker(self, postionx, postiony):
