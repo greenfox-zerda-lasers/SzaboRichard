@@ -32,20 +32,27 @@ class Garden:
     def how_many_thirsty_plants_do_we_have(self):
         for flower in self.my_little_garden_flower:
             if flower.flower_needs_water == True:
-                self.thirsty_plants += 1
+                if self.thirsty_plants <= len(self.my_little_garden_tree):
+                    self.thirsty_plants += 1
+                else:
+                    self.thirsty_plants -= 1
 
         for tree in self.my_little_garden_tree:
             if tree.tree_needs_water == True:
-                self.thirsty_plants +=1
+                if self.thirsty_plants <= len(self.my_little_garden_tree):
+                    self.thirsty_plants +=1
+                else:
+                    self.thirsty_plants -= 1
 
 
     def water_the_plants(self, amount):
         self.how_many_thirsty_plants_do_we_have()
         water_each = amount / self.thirsty_plants
         print("Watering with ", amount)
+        print(self.thirsty_plants)
         for plant in self.my_little_garden_flower:
             if plant.flower_needs_water == True:
-                if water_each > 5:
+                if water_each*0.75 > 5:
                     print("The {0} flower does not need water".format(plant.flower_type))
                 else:
                     print("The {0} flower needs water".format(plant.flower_type))
@@ -55,14 +62,14 @@ class Garden:
 
         for tree in self.my_little_garden_tree:
             if tree.tree_needs_water == True:
-                if water_each > 10:
+                # print(water_each)
+                if water_each* 0.4 > 10:
                     print("The {0} tree does not need water".format(tree.tree_type))
                 else:
                     print("The {0} tree needs water".format(tree.tree_type))
-                print(water_each)
                 tree.water_the_tree(water_each)
             else:
-                print("The {0} tree does not need water".format(tree.tree_type))
+                print("The {0} tree needs water".format(tree.tree_type))
 
 
 
@@ -98,4 +105,4 @@ my_first_garden.plant_tree(1, "orange")
 my_first_garden.garden_printer()
 my_first_garden.water_the_plants(40)
 my_first_garden.water_the_plants(70)
-# print(my_first_garden.my_little_garden)
+# print(my_first_garden.my_little_garden_tree, my_first_garden.my_little_garden_flower)
