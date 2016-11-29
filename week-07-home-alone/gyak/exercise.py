@@ -4,6 +4,7 @@ class Garden:
     def __init__(self):
         self.my_little_garden_flower = []
         self.my_little_garden_tree = []
+        self.thirsty_plants = 0
 
     def plant_flower(self, amount, flower_type):
         for _ in range(amount):
@@ -28,27 +29,38 @@ class Garden:
             else:
                 print("The {0} flower does not need water".format(tree.tree_type))
 
+    def how_many_thirsty_plants_do_we_have(self):
+        for flower in self.my_little_garden_flower:
+            if flower.flower_needs_water == True:
+                self.thirsty_plants += 1
+
+        for tree in self.my_little_garden_tree:
+            if tree.tree_needs_water == True:
+                self.thirsty_plants +=1
+
 
     def water_the_plants(self, amount):
-        water_each = amount/4
+        self.how_many_thirsty_plants_do_we_have()
+        water_each = amount / self.thirsty_plants
         print("Watering with ", amount)
         for plant in self.my_little_garden_flower:
             if plant.flower_needs_water == True:
-                plant.water_the_flower(water_each)
                 if water_each*0.7 > 5:
                     print("The {0} flower does not need water".format(plant.flower_type))
                 else:
                     print("The {0} flower needs water".format(plant.flower_type))
+                plant.water_the_flower(water_each)
             else:
                 print("The {0} flower does not need water".format(plant.flower_type))
 
         for tree in self.my_little_garden_tree:
             if tree.tree_needs_water == True:
-                tree.water_the_tree(water_each)
                 if water_each*0.4 > 10:
                     print("The {0} tree does not need water".format(tree.tree_type))
                 else:
                     print("The {0} tree needs water".format(tree.tree_type))
+                # print(water_each)
+                tree.water_the_tree(water_each)
             else:
                 print("The {0} tree does not need water".format(tree.tree_type))
 
