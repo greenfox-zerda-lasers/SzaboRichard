@@ -13,12 +13,19 @@ class GameMap:
         # self.floorimage = PhotoImage(file = "./floor.png")
         self.floorimage = PhotoImage(file = "./S500M801.png")
         self.wallimage = PhotoImage(file = "./wall.png")
-        self.bossimage = PhotoImage(file = "./boss.png")
+        # self.bossimage = PhotoImage(file = "./boss.png")
+        self.bossimage = PhotoImage(file = "./enemyfonok.png")
         self.reptilian = PhotoImage(file = "./skeleton.png")
         self.enemy = PhotoImage(file = "./evildemon.png")
+        # self.enemy = PhotoImage(file = "./mob.png")
+        # self.szasz = PhotoImage(file = "./mob.png")
+        # self.panki = PhotoImage(file = "./panki.png")
+        # self.bob = PhotoImage(file = "./bob.png")
+        # self.me = PhotoImage(file = "./ricsi.png")
         self.dog = PhotoImage(file = "./Andariel_(Diablo_II).png")
         self.ghost = PhotoImage(file = "./ghost.png")
         self.enemies_img_list = [self.reptilian, self.enemy, self.ghost, self.dog]
+        # self.enemies_img_list = [self.szasz, self.panki, self.me, self.bob]
         self.characters = { "hero" : None, "boss" : None, "skeletons" : []}
         self.hero_images = { "down": PhotoImage(file = "./hero-down.png"), "up" : PhotoImage(file = "./hero-up.png"), "left" : PhotoImage(file = "./hero-left.png"), "right" : PhotoImage(file = "./hero-right.png")}
 

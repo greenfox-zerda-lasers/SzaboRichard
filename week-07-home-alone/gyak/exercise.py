@@ -34,12 +34,23 @@ class Garden:
         print("Watering with ", amount)
         for plant in self.my_little_garden_flower:
             if plant.flower_needs_water == True:
-                # print(water_each)
                 plant.water_the_flower(water_each)
+                if water_each*0.7 > 5:
+                    print("The {0} flower does not need water".format(plant.flower_type))
+                else:
+                    print("The {0} flower needs water".format(plant.flower_type))
+            else:
+                print("The {0} flower does not need water".format(plant.flower_type))
 
         for tree in self.my_little_garden_tree:
             if tree.tree_needs_water == True:
                 tree.water_the_tree(water_each)
+                if water_each*0.4 > 10:
+                    print("The {0} tree does not need water".format(tree.tree_type))
+                else:
+                    print("The {0} tree needs water".format(tree.tree_type))
+            else:
+                print("The {0} tree does not need water".format(tree.tree_type))
 
 
 
@@ -50,11 +61,9 @@ class Flower:
         self.flower_type = flower_type
 
     def water_the_flower(self, water_amount):
-        self.water_level = water_amount*0.75
         if self.water_level < 5:
-            print("The {0} flower needs water".format(self.flower_type))
+            self.water_level = water_amount*0.75
         else:
-            print("The {0} flower does not need water".format(self.flower_type))
             self.flower_needs_water = False
 
 class Tree:
@@ -64,11 +73,9 @@ class Tree:
         self.tree_type = tree_type
 
     def water_the_tree(self, water_amount):
-        self.water_level = water_amount*0.4
         if self.water_level < 10:
-            print("The {0} tree needs water".format(self.tree_type))
+            self.water_level = water_amount*0.4
         else:
-            print("The {0} tree does not need water".format(self.tree_type))
             self.tree_needs_water = False
 
 my_first_garden = Garden()
