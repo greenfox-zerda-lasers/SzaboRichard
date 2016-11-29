@@ -45,7 +45,7 @@ class Garden:
         print("Watering with ", amount)
         for plant in self.my_little_garden_flower:
             if plant.flower_needs_water == True:
-                if water_each*0.7 > 5:
+                if water_each > 5:
                     print("The {0} flower does not need water".format(plant.flower_type))
                 else:
                     print("The {0} flower needs water".format(plant.flower_type))
@@ -55,11 +55,11 @@ class Garden:
 
         for tree in self.my_little_garden_tree:
             if tree.tree_needs_water == True:
-                if water_each*0.4 > 10:
+                if water_each > 10:
                     print("The {0} tree does not need water".format(tree.tree_type))
                 else:
                     print("The {0} tree needs water".format(tree.tree_type))
-                # print(water_each)
+                print(water_each)
                 tree.water_the_tree(water_each)
             else:
                 print("The {0} tree does not need water".format(tree.tree_type))
@@ -74,7 +74,7 @@ class Flower:
 
     def water_the_flower(self, water_amount):
         if self.water_level < 5:
-            self.water_level = water_amount*0.75
+            self.water_level += water_amount*0.75
         else:
             self.flower_needs_water = False
 
@@ -86,7 +86,7 @@ class Tree:
 
     def water_the_tree(self, water_amount):
         if self.water_level < 10:
-            self.water_level = water_amount*0.4
+            self.water_level += water_amount*0.40
         else:
             self.tree_needs_water = False
 
