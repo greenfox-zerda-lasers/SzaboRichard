@@ -2,75 +2,85 @@
 
 class Garden:
     def __init__(self):
-        self.my_little_garden_flower = []
-        self.my_little_garden_tree = []
+        self.my_little_garden = []
         self.thirsty_plants = 0
+        self.water_each = 0
 
     def plant_flower(self, amount, flower_type):
         for _ in range(amount):
             flower = Flower(flower_type)
-            self.my_little_garden_flower.append(flower)
+            self.my_little_garden.append(flower)
 
     def plant_tree(self, amount, tree_type):
         for _ in range(amount):
             tree = Tree(tree_type)
-            self.my_little_garden_tree.append(tree)
+            self.my_little_garden.append(tree)
 
     def garden_printer(self):
-        for plant in self.my_little_garden_flower:
-            if plant.flower_needs_water == True:
-                print("The {0} flower needs water".format(plant.flower_type))
-            else:
-                print("The {0} flower does not need water".format(plant.flower_type))
+        for plant in self.my_little_garden:
+            if isinstance(plant, Flower):
+                if plant.flower_needs_water == True:
+                    print("The {0} flower needs water".format(plant.flower_type))
+                else:
+                    print("The {0} flower does not need water".format(plant.flower_type))
 
-        for tree in self.my_little_garden_tree:
-            if tree.tree_needs_water == True:
-                print("The {0} flower needs water".format(tree.tree_type))
-            else:
-                print("The {0} flower does not need water".format(tree.tree_type))
+            elif isinstance(plant, Tree):
+                if plant.tree_needs_water == True:
+                    print("The {0} flower needs water".format(plant.tree_type))
+                else:
+                    print("The {0} flower does not need water".format(plant.tree_type))
 
     def how_many_thirsty_plants_do_we_have(self):
-        for flower in self.my_little_garden_flower:
-            if flower.flower_needs_water == True:
-                if self.thirsty_plants <= len(self.my_little_garden_tree):
-                    self.thirsty_plants += 1
+        for plant in self.my_little_garden:
+            if isinstance(plant, Flower):
+                if plant.flower_needs_water == True:
+                    if self.thirsty_plants < len(self.my_little_garden):
+                        self.thirsty_plants += 1
                 else:
                     self.thirsty_plants -= 1
 
-        for tree in self.my_little_garden_tree:
-            if tree.tree_needs_water == True:
-                if self.thirsty_plants <= len(self.my_little_garden_tree):
-                    self.thirsty_plants +=1
+            elif isinstance(plant, Tree):
+                if plant.tree_needs_water == True:
+                    if self.thirsty_plants < len(self.my_little_garden):
+                        self.thirsty_plants +=1
                 else:
                     self.thirsty_plants -= 1
 
 
     def water_the_plants(self, amount):
         self.how_many_thirsty_plants_do_we_have()
-        water_each = amount / self.thirsty_plants
+        # print(self.thirsty_plants)
         print("Watering with ", amount)
-        print(self.thirsty_plants)
-        for plant in self.my_little_garden_flower:
-            if plant.flower_needs_water == True:
-                if water_each*0.75 > 5:
+        for plant in self.my_little_garden:
+            if isinstance(plant, Flower):
+                if plant.flower_needs_water == True:
+                    # print(self.thirsty_plants, " oszto")
+                    self.water_each = amount / self.thirsty_plants
+                    # print(self.thirsty_plants, " oszto")
+                    plant.water_the_flower(self.water_each)
+                    # print(plant.flower_needs_water)
+                    self.how_many_thirsty_plants_do_we_have()
+                    if self.water_each > 5:
+                        print("The {0} flower does not need water".format(plant.flower_type))
+                    else:
+                        print("The {0} flower needs water".format(plant.flower_type))
+                    print(self.thirsty_plants, " oszto")
+                else:
                     print("The {0} flower does not need water".format(plant.flower_type))
-                else:
-                    print("The {0} flower needs water".format(plant.flower_type))
-                plant.water_the_flower(water_each)
-            else:
-                print("The {0} flower does not need water".format(plant.flower_type))
 
-        for tree in self.my_little_garden_tree:
-            if tree.tree_needs_water == True:
+            if isinstance(plant, Tree):
+                self.how_many_thirsty_plants_do_we_have()
+                print(self.water_each)
+                if plant.tree_needs_water == True:
+                    self.how_many_thirsty_plants_do_we_have()
+                    plant.water_the_tree(self.water_each)
                 # print(water_each)
-                if water_each* 0.4 > 10:
-                    print("The {0} tree does not need water".format(tree.tree_type))
+                    if self.water_each > 10:
+                        print("The {0} tree does not need water".format(plant.tree_type))
+                    else:
+                        print("The {0} tree needs water".format(plant.tree_type))
                 else:
-                    print("The {0} tree needs water".format(tree.tree_type))
-                tree.water_the_tree(water_each)
-            else:
-                print("The {0} tree needs water".format(tree.tree_type))
-
+                    print("The {0} tree needs water".format(plant.tree_type))
 
 
 class Flower:
