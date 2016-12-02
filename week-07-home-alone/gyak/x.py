@@ -25,6 +25,6 @@ def draw_x(num):
     for i in range(num):
         temp -= 1
         temp2 -= 2
-        print(i*" "+"*"+temp*" "+"*")
+        print(i*" "+"*"+temp*" "+"*"+i*"*")
 
 draw_x(9)
