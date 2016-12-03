@@ -3,16 +3,15 @@
 # It should raise an error if the parameter is not a list
 # example: [1, 2, 3, 4, 5] should produce [2, 4]
 
-def every_second_item_to_new_list(list_param):
+def evry_second_item_from_alist(data_list):
     try:
-        second_items_list = []
-        for i in range(len(list_param)):
-            if i % 2 == 1:
-                second_items_list.append(list_param[i])
-        return second_items_list
-    except TypeError:
-        print("Please give me a list for input!")
+        new_returned_list = []
+        for i in data_list:
+            if i % 2 == 0:
+                new_returned_list.append(i)
+        return new_returned_list
+    except TypeError as param:
+        print("{0}, is not a list".format(param))
 
-# example = 1
-example = [1, 2, 3, 4, 5]
-print(every_second_item_to_new_list(example))
+example= [1, 2, 3, 4, 5]
+print(evry_second_item_from_alist(example))

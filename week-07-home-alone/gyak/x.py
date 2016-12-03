@@ -18,13 +18,21 @@ def draw_star_lines_hour_glass(num):
 
 draw_star_lines_hour_glass(9)
 print("###############################################x")
+print("###############################################x")
+print(" ")
 
-def draw_x(num):
-    temp = num
-    temp2 = num
-    for i in range(num):
-        temp -= 1
-        temp2 -= 2
-        print(i*" "+"*"+temp*" "+"*"+i*"*")
+def draw_x(draw_data):
+    for column in range(len(draw_data)):
+        for row in draw_data[column]:
+            if row == 1:
+                print("X")
+            else:
+                print(" ")
 
-draw_x(9)
+x_draw_matrix = [ [1,0,0,0,1],
+                  [0,1,0,1,0],
+                  [0,0,1,0,0],
+                  [0,1,0,1,0],
+                  [1,0,0,0,1],
+                  ]
+draw_x(x_draw_matrix)
