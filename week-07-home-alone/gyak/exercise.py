@@ -30,20 +30,26 @@ class Garden:
 
     def watering_the_plants(self, water_amount):
         water_divide = len(self.garden_plant_holder)
+        water_amount_temp = water_amount
         print("Watering with: ", water_amount)
         for plant in self.garden_plant_holder:
             if isinstance(plant, Flower):
                 if plant.is_thirsty:
-                    plant.watering_the_flower(water_amount/water_divide)
+                    print(water_divide, "beerkezo water oszto")
+                    print(water_amount, "beerkezo water")
+                    print(water_amount_temp, "ideiglenes viztartalek")
+                    water_amount_temp -= water_amount/water_divide
                     water_divide -= 1
                     print(water_divide)
+                    print(water_amount_temp/water_divide, "aktualis locsolas")
+                    plant.watering_the_flower(water_amount_temp/water_divide)
                     if plant.is_thirsty == False:
                         print("The {0} Flower does not need water".format(plant.flower_name))
                     else:
                         print("The {0} Flower needs water".format(plant.flower_name))
                 else:
-                    print(water_divide)
-                    water_divide -= 1
+                    # print(water_divide)
+                    # water_divide -= 1
                     print("The {0} Flower does not need water".format(plant.flower_name))
             elif isinstance(plant, Tree):
                 if plant.is_thirsty:
