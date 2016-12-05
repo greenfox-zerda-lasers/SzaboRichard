@@ -14,85 +14,58 @@ class Garden:
             tree = Tree(tree_name)
             self.garden_plant_holder.append(tree)
 
-    def garden_printer(self):
-        for plant in self.garden_plant_holder:
-            if isinstance(plant, Flower):
-                if plant.is_thirsty:
-                    print("The {0} Flower needs water".format(plant.flower_name))
-                else:
-                    print("The {0} Flower does not need water".format(plant.flower_name))
-
-            elif isinstance(plant, Tree):
-                if plant.is_thirsty:
-                    print("The {0} Tree needs water".format(plant.tree_name))
-                else:
-                    print("The {0} Tree does not need water".format(plant.tree_name))
+    # def garden_printer(self):
 
     def watering_the_plants(self, water_amount):
-        water_divide = len(self.garden_plant_holder)
-        water_amount_temp = water_amount
-        print("Watering with: ", water_amount)
-        for plant in self.garden_plant_holder:
-            if isinstance(plant, Flower):
-                if plant.is_thirsty:
-                    print(water_divide, "beerkezo water oszto")
-                    print(water_amount, "beerkezo water")
-                    print(water_amount_temp, "ideiglenes viztartalek")
-                    water_amount_temp -= water_amount/water_divide
-                    water_divide -= 1
-                    print(water_divide)
-                    print(water_amount_temp/water_divide, "aktualis locsolas")
-                    plant.watering_the_flower(water_amount_temp/water_divide)
-                    if plant.is_thirsty == False:
-                        print("The {0} Flower does not need water".format(plant.flower_name))
-                    else:
-                        print("The {0} Flower needs water".format(plant.flower_name))
-                else:
-                    # print(water_divide)
-                    # water_divide -= 1
-                    print("The {0} Flower does not need water".format(plant.flower_name))
-            elif isinstance(plant, Tree):
-                if plant.is_thirsty:
-                    plant.watering_the_tree(water_amount/water_divide)
-                    # print(water_amount/water_divide)
-                    water_divide -= 1
-                    print(water_divide)
-                    if plant.is_thirsty == False:
-                        print("The {0} Tree does not need water".format(plant.tree_name))
-                    else:
-                        print("The {0} Tree needs water".format(plant.tree_name))
-                else:
-                    print("The {0} Tree does not need water".format(plant.tree_name))
 
+        thirsty_plants_count = 0
+        for plant in self.garden_plant_holder:
+            if plant.get_is_thirsty():
+                thirsty_plants_count += 1
+
+        if water_amount>0:
+            print("Watering with: ", water_amount)
+
+        for plant in self.garden_plant_holder:
+            if plant.get_is_thirsty():
+                plant.watering(water_amount/thirsty_plants_count)
+
+            if plant.get_is_thirsty():
+                print("The {0} {1} need water ({2})".format(plant.name, plant.__class__.__name__, plant.water_lvl))
+            else:
+                print("The {0} {1} does not need water ({2})".format(plant.name, plant.__class__.__name__, plant.water_lvl))
 class Flower:
-    def __init__(self, flower_name):
-        self.flower_name = flower_name
+    def __init__(self, name):
+        self.name = name
         self.water_lvl = 0
         self.is_thirsty = True
 
-    def watering_the_flower(self, water):
-        absorbed_water = water *0.75
-        if absorbed_water > 5:
-            self.is_thirsty = False
-        self.water_lvl += absorbed_water
+    def watering(self, water):
+        self.water_lvl += water *0.75
+        self.is_thirsty = self.get_is_thirsty()
+
+    def get_is_thirsty(self):
+        return (self.water_lvl < 5)
 
 class Tree:
-    def __init__(self, tree_name):
-        self.tree_name = tree_name
+    def __init__(self, name):
+        self.name = name
         self.water_lvl = 0
         self.is_thirsty = True
 
-    def watering_the_tree(self, water):
-        absorbed_water = water*0.40
-        if absorbed_water > 10:
-            self.is_thirsty = False
-        self.water_lvl += absorbed_water
+    def watering(self, water):
+        self.water_lvl += water*0.40
+        self.is_thirsty = self.get_is_thirsty()
+
+    def get_is_thirsty(self):
+        return (self.water_lvl < 10)
 
 my_garden = Garden()
 my_garden.add_flowers(1, "yellow")
 my_garden.add_flowers(1, "blue")
 my_garden.add_trees(1, "purple")
 my_garden.add_trees(1, "orange")
-my_garden.garden_printer()
+# my_garden.garden_printer()
+my_garden.watering_the_plants(0)
 my_garden.watering_the_plants(40)
 my_garden.watering_the_plants(70)
