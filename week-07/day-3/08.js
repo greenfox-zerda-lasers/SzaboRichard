@@ -14,9 +14,9 @@ var students = [
 // has more than 4 candies
 
 function studentWithCandyCrush (studentObj) {
-  return studentObj.filter(function(student) {
-    return student['candies'] > 4;
-  });
+  return studentObj.reduce(function(prev, next) {
+    return next['candies'] > 4 ? ++prev : prev;
+  }, 0);
 }
 
 console.log(studentWithCandyCrush(students));
