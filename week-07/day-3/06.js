@@ -5,6 +5,9 @@
 // it should return true if the string consits the given letter, false otherwise
 
 function letterInWord(word, letter) {
-  var ifLetterInside = false;
-  
+  return word.split('').some(function(char) {
+    return letter === char;
+  });
 }
+
+console.log(letterInWord("pear", "a"));
