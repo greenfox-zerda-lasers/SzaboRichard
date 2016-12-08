@@ -1,0 +1,100 @@
+body {
+  height: 50em;
+  display: flex;
+  /* Webkit (Chrome 11+) */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(15%, rgba(255,255,255,1)), color-stop(45%, rgba(237,237,237,1)), color-stop(46%, rgba(237,237,237,1)), color-stop(100%, rgba(184,184,184,1))); /* safari4+,chrome */
+  background: -webkit-linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 15%, rgba(237,237,237,1) 45%, rgba(237,237,237,1) 46%, rgba(184,184,184,1) 100%); /* safari5.1+,chrome10+ */
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  padding-top: 5%;
+  width: 100%;
+}
+
+.image-container {
+  /*border: 1px solid red;*/
+  display: flex;
+  width: 90%;
+  height: 50%;
+  justify-content: space-between;
+  margin:0 5% 0 5%;
+  -webkit-box-shadow: 1px 8px 36px -5px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 8px 36px -5px rgba(0,0,0,0.75);
+  box-shadow: 1px 8px 36px -5px rgba(0,0,0,0.75);
+  /*align-items: flex-start;*/
+}
+
+.image-container-inner {
+  display: flex;
+  /*margin: 3% 0 5% 0;*/
+  /*border: 1px solid green;*/
+  height: 100%;
+  width: 90%;
+  background: url("http://www.relatably.com/m/img/what-the-fuck-memes/k0dr7h.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.image-container-button-left, .image-container-button-right {
+  /*border: 1px solid black;*/
+  height: 100%;
+  width: 7%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  /* Webkit (Chrome 11+) */
+  background-image: -webkit-linear-gradient(top, #FAFAFA 40%, #EFE8F0 100%);
+}
+
+.image-container-button-left a, .image-container-button-right a {
+  background: url("../arrow.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  display: block;
+  width: 50px;
+  height: 50px;
+  /*position: absolute;*/
+  /*top: 150px;*/
+  /*align-items: center;*/
+}
+
+.image-container-button-right a {
+  /*right: 35%;*/
+  transform: rotate(180deg);
+}
+
+.image-container-bottom {
+  width: 90%;
+  height: 15%;
+  margin:0 5% 0 5%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  /*flex-direction: column;*/
+}
+
+.mini-photo-container {
+  /*border: 1px solid black;*/
+  background: #FFFFFF;
+  margin: 8px 4px 0 4px;
+  height: 70px;
+  width: 80px;
+  -webkit-box-shadow: 1px 8px 19px -8px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 8px 19px -8px rgba(0,0,0,0.75);
+  box-shadow: 1px 8px 19px -8px rgba(0,0,0,0.75);
+}
+.mini-photo-container img {
+  width: 70px;
+  height: 60px;
+  margin: 5px;
+  background: url("http://www.relatably.com/m/img/what-the-fuck-memes/k0dr7h.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
