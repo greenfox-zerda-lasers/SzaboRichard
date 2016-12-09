@@ -9,7 +9,7 @@ var wrapperThumbnails = document.querySelector('.image-container-bottom');
 var imageData = [
   {
     title: 'Star Wars',
-    content: 'Foxes',
+    content: 'This will be a day long remembered. It has seen the end of Kenobi, and will soon see the end of the rebellion.',
     local: "sw.jpg"
   },
   {
@@ -19,17 +19,17 @@ var imageData = [
   },
   {
     title: 'Suprise',
-    content: 'Baobabs and Roses',
+    content: 'Aren’t you a little short for a stormtrooper?',
     local: "sw2.jpg"
   },
   {
-    title: 'StW',
-    content: 'Giant monsters',
+    title: 'Nice title',
+    content: 'I find your lack of faith disturbing.',
     local: "sw3.jpg"
   },
   {
     title: 'Where is my exam?',
-    content: 'Sheep',
+    content: 'The Force is strong with this one.',
     local: "sw4.jpg"
   }];
   // var imgNum = imageData.length
@@ -38,34 +38,46 @@ next.addEventListener('click', function (e) {
   if (index === imageData.length) {
     index = 0;
   };
-  // console.log(index);
   showImg(index);
 });
 
 prev.addEventListener('click', function (e) {
   index--;
   if (index < 0) {
-    index = 0;
+    index = imageData.length;
   }
-  // console.log(items[index]);
   showImg(index);
 });
 
 function showImg (index) {
+  var hTag = document.querySelector('.show-image-content h1');
+  var pTag = document.querySelector('.show-image-content p');
+  hTag.textContent = imageData[index].title;
+  pTag.textContent = imageData[index].content;
   box.style.backgroundImage = "url(img/"+imageData[index].local+")";
 };
 
 
-
 function generetaThumb(imageData) {
   for (var i = 0; i < imageData.length; i++) {
+    // var pos =
     var myThumbs = document.createElement('img');
     myThumbs.className = 'thumbs';
     myThumbs.style.backgroundImage = "url(img/"+imageData[i].local+")";
     var wraper = document.createElement('div');
+    wraper.dataset.index = i;
     wraper.className = 'mini-photo-container';
     wraper.appendChild(myThumbs);
     wrapperThumbnails.appendChild(wraper);
+    wraper.addEventListener('click', function(e) {
+      showImg(this.dataset.index);
+      // console.log(wraper);
+    });
   };
 };
+
+// document.addEventListener('keypress', function(event){
+//   showImg(index);
+// });
+
 generetaThumb(imageData);
