@@ -4,7 +4,8 @@ var prev = container.querySelector('.button-prev');
 var next = container.querySelector('.button-next');
 var box = container.querySelector('.show-image');
 var index = 0;
-var items = ["sw.jpg", "sw1.jpg", "sw2.jpg", "sw3.jpg", "sw4.jpg"];
+// var items = ["sw.jpg", "sw1.jpg", "sw2.jpg", "sw3.jpg", "sw4.jpg"];
+var wrapperThumbnails = document.querySelector('.image-container-bottom');
 var imageData = [
   {
     title: 'Star Wars',
@@ -31,14 +32,13 @@ var imageData = [
     content: 'Sheep',
     local: "sw4.jpg"
   }];
-var amount = items.length;
-
+  // var imgNum = imageData.length
 next.addEventListener('click', function (e) {
   index++;
-  if (index === amount) {
+  if (index === imageData.length) {
     index = 0;
   };
-  console.log(index);
+  // console.log(index);
   showImg(index);
 });
 
@@ -47,7 +47,7 @@ prev.addEventListener('click', function (e) {
   if (index < 0) {
     index = 0;
   }
-  console.log(items[index]);
+  // console.log(items[index]);
   showImg(index);
 });
 
@@ -55,14 +55,17 @@ function showImg (index) {
   box.style.backgroundImage = "url(img/"+imageData[index].local+")";
 };
 
-function gallery(){
-  // items.forEach(function(elem){
-  //   // if (onclick) {
-  //   //
-  //   // }
-  //   console.log(box.setAttribute);
-  // });
-  //thumbnaileket begyújteni, foreach loopon belül események
-};
 
-gallery();
+
+function generetaThumb(imageData) {
+  for (var i = 0; i < imageData.length; i++) {
+    var myThumbs = document.createElement('img');
+    myThumbs.className = 'thumbs';
+    myThumbs.style.backgroundImage = "url(img/"+imageData[i].local+")";
+    var wraper = document.createElement('div');
+    wraper.className = 'mini-photo-container';
+    wraper.appendChild(myThumbs);
+    wrapperThumbnails.appendChild(wraper);
+  };
+};
+generetaThumb(imageData);

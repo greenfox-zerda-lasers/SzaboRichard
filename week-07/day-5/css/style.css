@@ -31,6 +31,7 @@ main {
   width: 90%;
   background-image: url("../img/sw.jpg");
   transition: all 3s ease;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -50,7 +51,6 @@ main {
   background-size: 40%;
   border: 0;
 }
-
 
 
 .button-next {
@@ -77,12 +77,12 @@ main {
   -moz-box-shadow: 1px 8px 19px -8px rgba(0,0,0,0.75);
   box-shadow: 1px 8px 19px -8px rgba(0,0,0,0.75);
 }
-.mini-photo-container img {
+.thumbs {
   width: 70px;
   height: 60px;
   margin: 5px;
   background: url("../img/sw2.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size:  auto;
+  background-size: cover;
 }
