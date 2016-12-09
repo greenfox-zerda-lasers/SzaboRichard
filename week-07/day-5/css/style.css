@@ -26,7 +26,6 @@ main {
 
 .show-image {
   display: flex;
-  /*margin: 3% 0 5% 0;*/
   /*border: 1px solid green;*/
   height: 100%;
   width: 90%;
@@ -37,7 +36,6 @@ main {
 }
 
 .button-prev, .button-next {
-  /*border: 1px solid black;*/
   height: 100%;
   width: 5%;
   flex-direction: column;
@@ -67,7 +65,6 @@ main {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  /*flex-direction: column;*/
 }
 
 .mini-photo-container {
@@ -87,5 +84,5 @@ main {
   background: url("../img/sw2.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size:  auto;
 }
