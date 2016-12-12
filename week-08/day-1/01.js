@@ -9,10 +9,10 @@ function Animal(sound) {
 }
 
 Animal.prototype.say = function(sound) {
-  console.log(this.sound);
+  return this.sound;
 }
 
 var dog = new Animal('woof');
 var cat = new Animal('meow');
-dog.say();
-cat.say();
+console.log(dog.say());
+console.log(cat.say());
