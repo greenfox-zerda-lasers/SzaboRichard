@@ -32,7 +32,8 @@ var imageData = [
     content: 'The Force is strong with this one.',
     local: "sw4.jpg"
   }];
-  // var imgNum = imageData.length
+
+showImg(0);
 next.addEventListener('click', function (e) {
   index++;
   if (index === imageData.length) {
@@ -71,13 +72,13 @@ function generetaThumb(imageData) {
     wrapperThumbnails.appendChild(wraper);
     wraper.addEventListener('click', function(e) {
       showImg(this.dataset.index);
+      // showImg(dataset.index);
       // console.log(wraper);
     });
   };
 };
 
-// document.addEventListener('keypress', function(event){
-//   showImg(index);
-// });
+
+
 
 generetaThumb(imageData);

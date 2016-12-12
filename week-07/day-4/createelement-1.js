@@ -14,7 +14,6 @@ var myNewHeading = document.createElement('h1');
 myNewHeading.textContent = 'I can add elements to the DOM';
 document.querySelector('.container').appendChild(myNewHeading);
 myNewHeading.style.color = "green";
-
 var newATag = document.createElement('a');
 newATag.setAttribute("href", "http://www.greenfoxacademy.com/");
 var foxIMG = document.createElement('img');
