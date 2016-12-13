@@ -47,7 +47,7 @@ Aircraft.prototype.refill = function(ammmoAmount) {
 
 function Carrier(ammo) {
   this.ammo = ammo;
-  this.hangarBay = []
+  this.hangarBay = [];
   this.healthPoint = 3000;
   this.totalDmg = 0;
 }
@@ -89,5 +89,5 @@ carrier.addAircraft(plane);
 carrier.addAircraft(plane2);
 carrier.fill();
 console.log(carrier.ammo);
-console.log(carrier.statusReport());
 console.log(carrier.fight());
+console.log(carrier.statusReport());
