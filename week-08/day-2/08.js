@@ -13,19 +13,19 @@
 //   return returnedArray;
 // }
 //
-// function walk(dist) {
-//   for (var i = 0; i < dist().length; i++) {
-//     dist[i] = true;
-//   }
+// function walk(distance) {
+//   // for (var i = 0; i < distance.length; i++) {
+//   //   distance[i] = true;
+//   // }
 //   // console.log(distance);
-//   return dist;
+//   return true;
 // }
 //
 // function tour(walk, dist) {
-//   return walk(distance(3));
+//   return distance(3).map(walk);
 // }
 //
-// console.log(tour(walk(), distance()));
+// console.log(tour(walk, distance));
 
 function tour (walk, distance) {
   return distance(8).map(walk);
