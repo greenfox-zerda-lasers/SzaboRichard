@@ -7,6 +7,6 @@ var colorChange = function(){
   document.body.style.backgroundColor ="red";
 }
 document.addEventListener("DOMContentLoaded", colorChange);
-window.addEventListener("load", function() {
+window.addEventListener("load", function(event) {
     console.log("DOM fully loaded and parsed");
   });
