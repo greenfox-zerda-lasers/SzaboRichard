@@ -2,7 +2,7 @@
 // - log the mouse coordinates on each call
 
 var t = setInterval(logMouseMovement,1500);
-var coordinates
+var coordinates;
 
 document.onmousemove = function(coord) {
   coordinates = coord.pageX + ', ' + coord.pageY;
