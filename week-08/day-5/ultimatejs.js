@@ -1,7 +1,9 @@
 'use strict';
 let button = document.querySelector('button');
 
-(function load() {
+load();
+function load() {
+// (function load() {
   let xhr = new XMLHttpRequest();
   let url = 'https://mysterious-dusk-8248.herokuapp.com/todos';
   xhr.open('GET', url, true);
@@ -12,11 +14,14 @@ let button = document.querySelector('button');
       console.log(xhr.response);
     }
   }
-})();
+};
+// })();
+
 
 function init(todoData) {
+  let tdDiv = document.querySelector('.todo-item');
+  tdDiv.innerHTML = "";
   todoData.forEach(function(item, index){
-    let tdDiv = document.querySelector('.todo-item');
     let tdWraper = document.createElement('section');
     let binCheckDiv = document.createElement('div');
     let label = document.createElement('label');
@@ -26,24 +31,24 @@ function init(todoData) {
     tdWraper.className = "todo-item-wrapper";
     label.textContent = item.text;
     label.className = "label-for-todo";
+    deleteTD.dataset.index = item.id;
     deleteTD.className = "trashbin";
     checkTD.className = "alter-checkbox";
-    // checkTD.addEventListener('click', function(e){
-    //   let cheecked = false;
-          // if (checked === false) {
-          //   checked = !checked;
-          // } else {
-          //   checked = !checked;
-          // }
-    // });
-    // deleteTD.addEventListener('click', function(){
-    //   deleteToDo();
-    // };)
+    checkTD.dataset.index = item.id;
+    checkTD.addEventListener('click', function(){
+      changeIMG(checkTD)
+
+  });
+    deleteTD.addEventListener('click', function(){
+      deleteToDo(this.dataset.index);
+      tdWraper.innerHTML = "";
+    })
     tdDiv.appendChild(tdWraper);
     tdWraper.appendChild(label);
     tdWraper.appendChild(binCheckDiv);
     binCheckDiv.appendChild(deleteTD);
     binCheckDiv.appendChild(checkTD);
+
   })
 };
 
@@ -53,7 +58,7 @@ function addToDoo() {
   xhr.open('POST', url, true);
   xhr.setRequestHeader('Content-Type', 'application/json');
   xhr.send(getData());
-
+  load();
 }
 
 function getData() {
@@ -66,10 +71,29 @@ function getData() {
 
 button.addEventListener('click', addToDoo);
 
-// function checkfunction(){
-//   let trueOrFalse = false;
-//
-// }
+function deleteToDo(index) {
+  let xhr = new XMLHttpRequest();
+  let url = 'https://mysterious-dusk-8248.herokuapp.com/todos/'+index;
+  xhr.open('DELETE', url, true);
+  xhr.setRequestHeader('Accept', 'application/json');
+  xhr.send();
+
+}
+
+function upDateCheck(item) {
+  let xhr = new XMLHttpRequest();
+  let url = 'https://mysterious-dusk-8248.herokuapp.com/todos/'+index;
+  xhr.open('POST', url, true);
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.send();
+}
+
+function changeIMG(item){
+  item.classList.toggle("alter-checkbox-checked")
+  upDateCheck(item);
+  console.log("!!!!!!!" +item);
+  console.log(item.parentElement.parentElement.children[0]);
+}
 
 // function createToDo() {}
 
