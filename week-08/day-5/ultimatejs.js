@@ -36,8 +36,8 @@ function init(todoData) {
     checkTD.className = "alter-checkbox";
     checkTD.dataset.index = item.id;
     checkTD.addEventListener('click', function(){
-      changeIMG(checkTD)
-
+      changeIMG(checkTD);
+      upDateCheck(this);
   });
     deleteTD.addEventListener('click', function(){
       deleteToDo(this.dataset.index);
@@ -64,6 +64,7 @@ function addToDoo() {
 function getData() {
   var returnedToDo = {};
   returnedToDo.text = document.querySelector('input[name=todo]').value;
+  document.querySelector('input[name=todo]').value = "";
   // returnedToDo = document.querySelector('alter-checkbox');
   // console.log(returnedToDo);
   return JSON.stringify(returnedToDo);
@@ -81,18 +82,38 @@ function deleteToDo(index) {
 }
 
 function upDateCheck(item) {
+  let returnedToDo = {};
   let xhr = new XMLHttpRequest();
-  let url = 'https://mysterious-dusk-8248.herokuapp.com/todos/'+index;
-  xhr.open('POST', url, true);
+  let url = 'https://mysterious-dusk-8248.herokuapp.com/todos/'+item.dataset.index;
+  xhr.open('PUT', url, true);
   xhr.setRequestHeader('Content-Type', 'application/json');
-  xhr.send();
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === XMLHttpRequest.DONE) {
+      checkedChekcer(JSON.parse(xhr.response));
+      // console.log(xhr.response);
+    }
+  }
+  xhr.send(checkedChekcer());
+}
+
+function checkedChekcer(item) {
+  let obj = {};
+  obj.text = item.parentNode.parentNode.querySelector('label').textContent;
+  if (item.completed === false) {
+    obj.completed = true;
+    // obj.text = item.text;
+  } else {
+    obj.completed = false;
+    // obj.text = item.text;
+  }
+  return JSON.stringify(obj);
 }
 
 function changeIMG(item){
   item.classList.toggle("alter-checkbox-checked")
-  upDateCheck(item);
-  console.log("!!!!!!!" +item);
-  console.log(item.parentElement.parentElement.children[0]);
+  item.parentElement.parentElement.children[0].classList.toggle("label-for-todo-o");
+  // console.log("!!!!!!!" +item);
+  // console.log(item.parentElement.parentElement.children[0]);
 }
 
 // function createToDo() {}
