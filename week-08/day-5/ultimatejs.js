@@ -1,5 +1,5 @@
 'use strict';
-let button = document.querySelector('button');
+let button = document.querySelector('.addThis');
 
 load();
 function load() {
@@ -10,7 +10,7 @@ function load() {
   xhr.send();
   xhr.onreadystatechange = function() {
     if (xhr.readyState === XMLHttpRequest.DONE) {
-      init(JSON.parse(xhr.response));
+      init(JSON.parse(xhr.response).reverse());
       console.log(xhr.response);
     }
   }
@@ -27,13 +27,17 @@ function init(todoData) {
     let label = document.createElement('label');
     let deleteTD = document.createElement('button');
     let checkTD = document.createElement('div');
+    if (item.completed === true) {
+      checkTD.className = "alter-checkbox-checked";
+    } else {
+      checkTD.className = "alter-checkbox";
+    }
     binCheckDiv.className = "inner-separator";
     tdWraper.className = "todo-item-wrapper";
     label.textContent = item.text;
     label.className = "label-for-todo";
     deleteTD.dataset.index = item.id;
     deleteTD.className = "trashbin";
-    checkTD.className = "alter-checkbox";
     checkTD.dataset.index = item.id;
     checkTD.addEventListener('click', function(){
       changeIMG(checkTD);
@@ -57,8 +61,12 @@ function addToDoo() {
   let url = 'https://mysterious-dusk-8248.herokuapp.com/todos';
   xhr.open('POST', url, true);
   xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === XMLHttpRequest.DONE) {
+      load();
+    }
+  }
   xhr.send(getData());
-  load();
 }
 
 function getData() {
@@ -70,7 +78,10 @@ function getData() {
   return JSON.stringify(returnedToDo);
 }
 
-button.addEventListener('click', addToDoo);
+button.addEventListener('click',  function(){
+  load();
+  addToDoo();
+});
 
 function deleteToDo(index) {
   let xhr = new XMLHttpRequest();
@@ -87,35 +98,60 @@ function upDateCheck(item) {
   let url = 'https://mysterious-dusk-8248.herokuapp.com/todos/'+item.dataset.index;
   xhr.open('PUT', url, true);
   xhr.setRequestHeader('Content-Type', 'application/json');
+  let returnedData = checkedChekcer(item);
   xhr.onreadystatechange = function() {
     if (xhr.readyState === XMLHttpRequest.DONE) {
-      checkedChekcer(JSON.parse(xhr.response));
-      // console.log(xhr.response);
+      console.log(xhr.response);
     }
   }
-  xhr.send(checkedChekcer());
+  console.log(returnedData);
+  xhr.send(returnedData);
 }
 
 function checkedChekcer(item) {
   let obj = {};
   obj.text = item.parentNode.parentNode.querySelector('label').textContent;
-  if (item.completed === false) {
+  if (item.classList.contains("alter-checkbox-checked")) {
     obj.completed = true;
-    // obj.text = item.text;
+    console.log(obj.text);
   } else {
     obj.completed = false;
-    // obj.text = item.text;
   }
-  return JSON.stringify(obj);
+  console.log(obj.text);
+  return JSON.stringify(obj)
 }
 
 function changeIMG(item){
+  // console.log("chg item: "+item);
   item.classList.toggle("alter-checkbox-checked")
   item.parentElement.parentElement.children[0].classList.toggle("label-for-todo-o");
-  // console.log("!!!!!!!" +item);
-  // console.log(item.parentElement.parentElement.children[0]);
 }
 
-// function createToDo() {}
+let musicB = document.querySelector('.music');
+var music = document.querySelector('audio');
+var allowedKeys = {
+  37: 'left',
+  38: 'up',
+  39: 'right',
+  40: 'down',
+  65: 'a',
+  66: 'b'
+};
+var konamiCodePosition = 0;
+var konamiCode = ['up', 'up', 'down', 'down', 'left', 'right', 'left', 'right', 'b', 'a'];
 
-// createToDo();
+document.addEventListener('keyup', function(e){
+  var key = allowedKeys[e.keyCode];
+  var requiredKey = konamiCode[konamiCodePosition];
+
+  if (key == requiredKey) {
+    konamiCodePosition++;
+    if (konamiCodePosition === konamiCode.length) {
+      music.classList.toggle('audio-on');
+      window.alert("Empire Strikes Back");
+    }
+  } else {
+    konamiCodePosition = 0;
+  }
+
+})

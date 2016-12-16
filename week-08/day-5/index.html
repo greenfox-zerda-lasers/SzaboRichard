@@ -9,16 +9,23 @@
   <body>
     <main>
       <header class="heading">
-        <h1>TODOS</h1>
+        <h1>Empire ToDo</h1>
+        <button type="button" class="music" name="button"></button>
+        <audio controls class="audio-off">
+        <!-- <source src="music.ogg" type="audio/ogg"> -->
+        <source src="music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+        </audio>
+
       </header>
       <article class="data-input">
         <input type="text" name="todo" value="" maxlength="45" placeholder="Add ToDos";>
-        <button type="button" name="button">Add</button>
+        <button type="button" class="addThis" name="button">Add</button>
       </article>
       <article class="todo-item">
       </article>
     </main>
-    <!-- <script src="ultimatejs.js"></script> -->
-    <script src="refaktored.js"> </script>
+    <script src="ultimatejs.js"></script>
+    <!-- <script src="refaktored.js"> </script> -->
   </body>
 </html>
