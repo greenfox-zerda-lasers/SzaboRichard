@@ -1,0 +1,168 @@
+
+body  {
+  margin: 0;
+  background-image: url('./background.jpg');
+  background-position: center;
+  background-size: auto;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  background: #f7f7f7;
+  max-width: 500px;
+  width: 90%;
+  height: 100%;
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /*box-shadow: -1px 2px 8px 0px rgba(117,112,117,1);*/
+  /*box-shadow: 1px -2px 109px 31px rgba(240,240,14,1);*/
+  box-shadow: 1px -2px 173px 9px rgba(65,209,30,1);
+}
+
+.heading {
+    font-family: Lato-Light, sans-serif;
+    color: #cecece;
+}
+
+.heading h1 {
+  font-size: 5rem;
+  font-weight: 200;
+}
+
+.audio-off {
+  display: none
+}
+
+.audio-on {
+  display: block;
+  -webkit-transition:all 0.5s linear;
+  -moz-transition:all 0.5s linear;
+  -o-transition:all 0.5s linear;
+  transition:all 0.5s linear;
+  -moz-box-shadow: 2px 2px 4px 0px #ff3131;
+  -webkit-box-shadow:  2px 2px 4px 0px #ff3131;
+  box-shadow: 2px 2px 4px 0px #ff3131;
+  -moz-border-radius:7px 7px 7px 7px ;
+  -webkit-border-radius:7px 7px 7px 7px ;
+  border-radius:7px 7px 7px 7px ;
+  margin-left: 5rem;
+}
+
+
+.music {
+  box-shadow: 2px 2px 4px 0px #ff3131;
+  border-radius:50% ;
+  background-image: url('./empbutton.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: block;
+  width: 26px;
+  height: 26px;
+  margin-bottom: 1rem;
+  margin-left: 13rem;
+}
+
+.data-input {
+  margin: 5%;
+  margin-bottom: 0;
+  width: 100%;
+  height: 15%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.data-input input {
+  font-size: 16px;
+  border: none;
+  width: 21rem;
+  height: 3rem;
+  /*margin: 1rem;*/
+  box-shadow: inset 0px 0px 6px 0px rgb(185, 178, 178)
+}
+
+.data-input button {
+  box-shadow: inset 0px 0px 6px 0px rgb(185, 178, 178);
+  height: 3.1rem;
+  width: 4rem;
+  background: red;
+  border: none;
+  font-family: Lato-Regular, sans-serif;
+  font-size: 26px;
+  color: #ffffff;
+  /*position: absolute;*/
+  /*right: 3rem;*/
+  /*top: 1rem;*/
+}
+
+
+.todo-item {
+    font-family: Lato-Regular, sans-serif;
+    font-size: 26px;
+    line-height: 56px;
+    color: #9b9b9b;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%
+}
+
+.todo-item-wrapper {
+  margin: 0 2rem 0 3rem;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.inner-separator {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.label-for-todo-o {
+  opacity: 0.5;
+}
+
+.trashbin, .alter-checkbox-checked {
+  background: #F7F7F7;
+  background-image: url("32.svg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  border: none;
+  height: 26px;
+  width: 26px;
+  margin-top: 0.7rem;
+  padding-top: 0.1rem;
+  margin-left: 0.7rem;
+}
+
+.todo-item .alter-checkbox, .alter-checkbox-checked {
+  height: 26px;
+  width: 26px;
+  background-color: white;
+  border-radius: 30px;
+  margin-top: 0.7rem;
+  box-shadow: inset 0px 0px 6px 0px rgb(102, 98, 98);
+  /*border: 1.6px solid #9b9b9b;*/
+  margin-left: 0.8rem;
+  padding-top: 0.1rem;
+  /*display: none;*/
+}
+
+.alter-checkbox-checked {
+  background-image: url('./bin2.svg');
+  background-position: center;
+  background-size: cover;
+}
+
+/**
+windowra event listener
+tömbbe a key leütések és nézni, h első eleme az adott key-e
+inputra keycode
+/

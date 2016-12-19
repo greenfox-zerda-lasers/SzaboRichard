@@ -9,6 +9,7 @@
   "author": "en",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.15.2",
     "eslint": "^3.12.2",
     "express": "^4.14.0"
   },

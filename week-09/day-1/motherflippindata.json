@@ -1,5 +1,4 @@
-module.exports = function lOl() {
-  return [
+ [
    {
        "completed": false,
        "id": 1,
@@ -15,5 +14,4 @@ module.exports = function lOl() {
        "id": 3,
        "text": "Save the world"
    }
-];
-}
+]
