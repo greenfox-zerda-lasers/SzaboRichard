@@ -144,7 +144,7 @@ document.addEventListener('keyup', function(e){
   var key = allowedKeys[e.keyCode];
   var requiredKey = konamiCode[konamiCodePosition];
 
-  if (key == requiredKey) {
+  if (key == requiredKey) { //in arrayre átírni
     konamiCodePosition++;
     if (konamiCodePosition === konamiCode.length) {
       music.classList.toggle('audio-on');

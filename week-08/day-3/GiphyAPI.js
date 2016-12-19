@@ -9,7 +9,7 @@ var imageData;
 
 window.onload = function() {
   let httpRequest = new XMLHttpRequest();
-  httpRequest.open('GET', 'http://api.giphy.com/v1/gifs/search?q=star+wars+rogue+one&limit=16&api_key=dc6zaTOxFJmzC   ', true);
+  httpRequest.open('GET', 'http://api.giphy.com/v1/gifs/search?q=star+wars+rogue+one&limit=16&api_key=dc6zaTOxFJmzC', true);
   httpRequest.send(null);
   httpRequest.onreadystatechange = function() {
     if (httpRequest.readyState === XMLHttpRequest.DONE) {
