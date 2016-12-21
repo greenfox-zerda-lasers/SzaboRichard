@@ -17,7 +17,14 @@ con.connect(function(err){
 
 // all books with its name, authors name, category name, publishers name and price
 
-con.query("SELECT book_name, aut_name, cate_descrip, pub_name, book_price FROM book_mast INNER JOIN author ON author.aut_id = book_mast.aut_id INNER JOIN category ON category.cate_id = book_mast.cate_id INNER JOIN newpublisher ON newpublisher.pub_id = book_mast.pub_id ;", function(err, rows){
+con.query('SELECT book_name, aut_name, cate_descrip, pub_name, book_price\
+  FROM book_mast\
+  INNER JOIN author\
+  ON author.aut_id = book_mast.aut_id\
+  INNER JOIN category\
+  ON category.cate_id = book_mast.cate_id\
+  INNER JOIN newpublisher\
+  ON newpublisher.pub_id = book_mast.pub_id;', function(err, rows){
   if (err) {
     console.log(err.toString());
     return
