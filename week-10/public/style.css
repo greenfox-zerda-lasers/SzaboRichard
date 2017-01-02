@@ -1,36 +1,213 @@
 main {
   display: flex;
   flex-wrap: wrap;
-  /*flex-direction: column;*/
   width: 570px;
+  margin: 5rem auto;
+  font-size: 12px;
+  background-color: #F5F5F5;
 }
 
 .logo {
-  border: 1px solid red;
+  /*border: 1px solid red;*/
   width: 152px;
   height: 72px;
+  background-image: url('./img/foxplayer.png');
+  background-position: 10px center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: #F5F5F5;
 }
 
+
 .current-play {
-  border: 1px solid red;
-  height: 56px;
-  width: 408px;
+  /*border: 1px solid red;*/
+  height: 48px;
+  width: 414px;
+  display: flex;
+  background-color: #F5F5F5;
+}
+
+.current-play img {
+  margin: 0;
+  padding: 0;
+  width: 125px;
+  height: 115px;
+  position: relative;
+  z-index: 99;
+}
+
+.current-play-inner {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.current-play-inner-title h2 {
+  width: 100%;
+  color: #626262;
+  margin: 5% 2% 0 4%;
+  font-weight: normal;
+  padding: 0;
+  font-size: 1.2em;
+}
+
+.current-play-inner-title p {
+  font-size: 0.98em;
+  margin: 2% 2% 2% 4%;
+  opacity: 0.5;
+}
+
+.current-play-inner-icon-container {
+  display: flex;
+  flex: 4;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .playlist {
-  border: 1px solid red;
+  /*border: 1px solid red;*/
   width: 275px;
   height: 182px;
+  background-color: #F5F5F5;
+}
+
+.playlist-inner {
+  display: flex;
+}
+
+.ion-android-add {
+  font-size: 23px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 54px;
+}
+
+.ion-android-star-outline {
+  font-size: 23px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2%;
+}
+
+.ion-ios-close-empty {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 80px;
+}
+
+.padding-clear {
+  padding: 0;
+}
+
+.gray {
+  background-color: #EAEAEA;
+}
+
+.lightergray {
+  background-color: #F5F5F5;
+}
+
+.playlist p, .playlist h2 {
+  padding: 3%;
+  margin: 0;
+}
+
+.playlist h2 {
+  font-weight: normal;
+  font-size: 1rem;
 }
 
 .tracks {
-  border: 1px solid red;
+  /*border: 1px solid red;*/
   width: 290px;
   height: 218px;
+  background-color: #EAEAEA;
+  margin-top: -26px;
 }
 
+
+.tracklist-inner {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.tracklist-inner-style {
+  display: flex;
+  flex: 1;
+}
+
+.tracks p {
+  display: flex;
+  margin: 0;
+  padding: 3%;
+ }
+
 .mscplayer {
-  width: 560px;
+  width: 570px;
   height: 42px;
+  display: flex;
+  /*border: 1px solid blue;*/
+}
+
+.controls {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: 30px;
+}
+
+.controls button, .bonus-buttons button {
+  margin: 5%;
+  border: none;
   display: block;
+  background-color: #F5F5F5;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.reverse, .forward {
+  width: 18px;
+  height: 15px;
+}
+.reverse {
+  background-image: url('./img/rewind.svg');
+}
+
+.forward {
+  background-image: url('./img/forward.svg');
+}
+
+.pause {
+  background-image: url('./img/play.svg');
+  background-size: 20px;
+  width: 25px;
+  height: 20px;
+}
+
+.bonus-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+  margin: 2%;
+}
+
+.shuffle {
+  background-image: url('./img/shuffle.svg');
+  margin: 0;
+  width: 15px;
+  height: 15px;
+}
+
+.rangeslider {
+  width: 100%;
+  margin-left: 5%;
+  padding-top: 0.5%;
 }

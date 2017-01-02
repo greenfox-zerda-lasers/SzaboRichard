@@ -3,25 +3,141 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
-    <title></title>
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+    <link rel="stylesheet" href="rangeSlider.css">
+    <title>Music Player</title>
   </head>
   <body>
     <main>
       <aside class="logo">
-        <img src="./img/foxplayer.png" alt="fox-logo">
       </aside>
       <article class="current-play">
+        <img src="./img/music-placeholder.png" alt="">
+        <div class="current-play-inner">
+          <div class="current-play-inner-title">
+            <h2>No track given !!!!!!!!!!!!!!!!fds</h2>
+            <p>Feed me a track</p>
+          </div>
+          <div class="current-play-inner-icon-container">
+            <div class="ion-android-add padding-clear">
 
+            </div>
+            <div class="ion-android-star-outline">
+
+            </div>
+          </div>
+        </div>
       </article>
       <article class="playlist">
+        <div class="playlist-inner">
+          <h2>Playlists</h2>
+          <div class="ion-android-add">
 
+          </div>
+        </div>
+        <div class="playlist-inner gray">
+          <p>All tracks</p>
+        </div>
+        <div class="playlist-inner">
+          <p>Favorites</p>
+        </div>
+        <div class="playlist-inner gray x-adder">
+          <p>Relaxing music for programming</p>
+          <div class="x-adder ion-ios-close-empty">
+
+          </div>
+        </div>
+        <div class="playlist-inner ">
+          <p>Party</p>
+        </div>
       </article>
       <article class="tracks">
+        <div class="tracklist-inner">
+          <div class="tracklist-inner-style">
+            <p>1</p>
+            <p>loooooooooong tracks</p>
+          </div>
+          <p>16:30</p>
+        </div>
+
+        <div class="tracklist-inner lightergray">
+          <div class="tracklist-inner-style">
+            <p>2</p>
+            <p>loooooooooong tracks</p>
+          </div>
+          <p>6:30</p>
+        </div>
 
       </article>
-      <audio src="music.mp3" type="audio">
+      <article class="mscplayer">
+        <div class="controls">
+          <button type="button" class="reverse"
+           name="button"></button>
+           <button type="button" class="pause" name="button"></button>
+          <button type="button" class="forward" name="button"></button>
+        </div>
+        <div class="rangeslider">
+          <input type="range" id="volume-bar" min="0" max="100" step="1" value="0">
+        </div>
+        <div class="bonus-buttons">
+          <button type="button" class="shuffle" name="button"></button>
+          <div class="bonus-slider">
+            <!-- <input type="range" min="0" max="1"> --->
+          </div>
+        </div>
+      </article>
+      <audio src="music.mp3" controls>
 
       </audio>
     </main>
+    <script src="frontend.js"></script>
+    <script src="rangeSlider.js"></script>
+    <script src="slider.js"></script>
+    <script>
+      (function () {
+        var selector = '[data-rangeSlider]',
+          elements = document.querySelectorAll(selector);
+          // Example functionality to demonstrate a value feedback
+        function valueOutput(element) {
+          var value = element.value,
+            output = element.parentNode.getElementsByTagName('output')[0];
+          output.innerHTML = value;
+        }
+        for (var i = elements.length - 1; i >= 0; i--) {
+          valueOutput(elements[i]);
+        }
+        Array.prototype.slice.call(document.querySelectorAll('input[type="range"]')).forEach(function (el) {
+          el.addEventListener('input', function (e) {
+            valueOutput(e.target);
+          }, false);
+        });
+        // Basic rangeSlider initialization
+        rangeSlider.create(elements, {
+          min: 0,
+          max: 100,
+          value : 0,
+          borderRadius : 3,
+          buffer : 10,
+          minEventInterval : 1000,
+          // Callback function
+          onInit: function () {
+          },
+          // Callback function
+          onSlideStart: function (value, percent, position) {
+            console.info('onSlideStart', 'value: ' + value, 'percent: ' + percent, 'position: ' + position);
+          },
+          // Callback function
+          onSlide: function (value, percent, position) {
+            console.log('onSlide', 'value: ' + value, 'percent: ' + percent, 'position: ' + position);
+          },
+          // Callback function
+          onSlideEnd: function (value, percent, position) {
+            console.warn('onSlideEnd', 'value: ' + value, 'percent: ' + percent, 'position: ' + position);
+          }
+        });
+      })();
+    </script>
+
   </body>
 </html>
