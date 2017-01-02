@@ -5,7 +5,7 @@ load();
 function load() {
 // (function load() {
   let xhr = new XMLHttpRequest();
-  let url = 'https://mysterious-dusk-8248.herokuapp.com/todos';
+  let url = 'localhost:3000';
   xhr.open('GET', url, true);
   xhr.send();
   xhr.onreadystatechange = function() {

@@ -1,0 +1,36 @@
+main {
+  display: flex;
+  flex-wrap: wrap;
+  /*flex-direction: column;*/
+  width: 570px;
+}
+
+.logo {
+  border: 1px solid red;
+  width: 152px;
+  height: 72px;
+}
+
+.current-play {
+  border: 1px solid red;
+  height: 56px;
+  width: 408px;
+}
+
+.playlist {
+  border: 1px solid red;
+  width: 275px;
+  height: 182px;
+}
+
+.tracks {
+  border: 1px solid red;
+  width: 290px;
+  height: 218px;
+}
+
+.mscplayer {
+  width: 560px;
+  height: 42px;
+  display: block;
+}
