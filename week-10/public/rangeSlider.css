@@ -1,8 +1,8 @@
 .rangeSlider,
 .rangeSlider__fill {
-    background: #7f8c8d;
+    background: #DBDBDB;
     display: block;
-    height: 10px;
+    height: 4px;
     width: 100%;
     -webkit-box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.3);
     -moz-box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.3);
@@ -12,7 +12,7 @@
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
     border-radius: 10px;
-    margin-top: 12px;
+    margin-top: 15px;
 }
 
 .rangeSlider {
@@ -25,9 +25,9 @@
 }
 
 .rangeSlider__fill {
-    background: #16a085;
+    background: #3CD0CF;
     position: absolute;
-    top: -11px;
+    top: -15px;
     z-index: 2;
 }
 
@@ -39,7 +39,7 @@
     width: 10px;
     height: 10px;
     position: absolute;
-    top: 0px;
+    top: -3px;
     z-index: 3;
     /*background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(100%, rgba(0, 0, 0, 0.1)));
     background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.1));
@@ -98,6 +98,6 @@ input[type="range"]:focus + .rangeSlider .rangeSlider__handle {
     position: absolute;
     top: 3px;
     height: 14px;
-    background: #2c3e50;
+    background: black;
     border-radius: 10px;
 }
