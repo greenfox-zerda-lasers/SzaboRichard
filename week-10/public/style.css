@@ -128,7 +128,20 @@ main {
   background-color: #EAEAEA;
   margin-top: -26px;
 }
+/*
+ol {
+  padding-left: 8%;
+  margin: 0;
+}
 
+ol li {
+  margin: 0;
+  padding: 3%;
+}
+
+ol li:nth-child (2n) {
+  background-color: #F5F5F5;
+}*/
 
 .tracklist-inner {
   display: flex;
@@ -208,6 +221,12 @@ main {
 
 .rangeslider {
   width: 100%;
-  margin-left: 5%;
+  /*margin-left: 5%;*/
   padding-top: 0.5%;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.currentTime {
+  margin: 3.5%;
 }
