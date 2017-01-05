@@ -10,12 +10,17 @@ let setTrackAndPlay = function mediaPlayer(index) {
   media.play();
 };
 
+var slider = document.querySelector('input[type="range"]');
+// slider.rangeSlider.update({value: 16})
 
+function handleSliderProgress() {
+  var percent = (media.currentTime / media.duration) * 100;
+  slider.rangeSlider.update({value: percent});
+  console.log(percent);
+}
+// console.log((media.currentTime / media.duration) * 100);
 
-// media.addEventListener('canplaythrough', function() {
-//     this.currentTime = 12;
-//     this.play();
-// });
+// $0.rangeSlider.update({value: 1}), ($0 == <input type="range">)
 
 media.addEventListener('timeupdate',function(){
     var currentTimeMs = media.currentTime;
@@ -27,14 +32,15 @@ media.addEventListener('timeupdate',function(){
        sec = sec >= 10 ? sec : '0' + sec;
        return min + ':' + sec;
     }
-    console.log(musicTime(currentTimeMs));
+    // console.log(musicTime(currentTimeMs));
+    handleSliderProgress();
     currTime.textContent = musicTime(currentTimeMs);
 },false);
 
 play.addEventListener('click', function(){
   if(media.paused)
   {
-    setTrackAndPlay(counter);
+    media.play();
     console.log('play');
   }
   else
@@ -57,6 +63,5 @@ forward.addEventListener('click', function(){
   if (counter > musicList.length-1) {
     counter = 0;
   }
-  // console.log('for ' + counter);
   setTrackAndPlay(counter);
-})
+});

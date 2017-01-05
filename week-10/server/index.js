@@ -57,39 +57,38 @@ app.delete("/playlists/:id", function deletePlaylist (req, res) {
 });
 
 
-// app.get('/playlist-tracks/', function (req, res) {
-//   connection.query('SELECT * FROM tracks', function(err, rows){
-//     if (err) {
-//       throw err;
-//     }
-//     res.send(rows);
-//   });
-//   // res.json(playlists[0][0].title + " " + playlists[0][0].artist)
-// });
-//
-//
-// app.get("/playlist-tracks/:track_id", function getPlaylist (req, res) {
-//   connection.query('SELECT * FROM tracks WHERE playlist_id = \'' + req.params.id + '\'', function(err, rows){
-//     if (err) {
-//       throw err;
-//     }
-//     res.send(rows);
-//   });
-// });
-//
-// app.post("/playlist-tracks/:playlist_id", function postPlaylist (req, res) {
-//   connection.query({
-//     sql : 'INSERT INTO tracks(path, playlist_id) VALUES(?,?)',
-//     values : ['test', req.params.playlist_id]
-//   }, function(err, rows){
-//     if (err) {
-//       throw err;
-//     }
-//     res.send(rows);
-//   });
-// });
+app.get('/playlist-tracks/', function (req, res) {
+  connection.query('SELECT * FROM tracks', function(err, rows){
+    if (err) {
+      throw err;
+    }
+    res.send(rows);
+  });
+});
 
-app.get("/playlist-tracks/:playlist_id/:track_id", function deletePlaylist (req, res) {
+
+app.get("/playlist-tracks/:track_id", function getPlaylist (req, res) {
+  connection.query('SELECT * FROM tracks WHERE playlist_id = \'' + req.params.id + '\'', function(err, rows){
+    if (err) {
+      throw err;
+    }
+    res.send(rows);
+  });
+});
+
+app.post("/playlist-tracks/:playlist_id", function postPlaylist (req, res) {
+  connection.query({
+    sql : 'INSERT INTO tracks(path, playlist_id) VALUES(?,?)',
+    values : ['test', req.params.playlist_id]
+  }, function(err, rows){
+    if (err) {
+      throw err;
+    }
+    res.send(rows);
+  });
+});
+
+app.delete("/playlist-tracks/:playlist_id/:track_id", function deletePlaylist (req, res) {
   connection.query({
     sql : 'DELETE FROM tracks WHERE playlist_id = ? AND id = ?' ,
     values : [req.params.playlist_id, req.params.track_id]

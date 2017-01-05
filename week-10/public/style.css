@@ -210,11 +210,16 @@ ol li:nth-child (2n) {
   background-image: url('./img/forward.svg');
 }
 
-.pause {
+.play, .pause {
   background-image: url('./img/play.svg');
   background-size: 20px;
   width: 25px;
   height: 20px;
+}
+
+.pause {
+  background-image: url('./img/pause.svg');
+  background-size: 15px;  
 }
 
 .bonus-buttons {
