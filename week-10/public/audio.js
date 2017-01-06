@@ -1,6 +1,6 @@
 /**
  * Audio module
- * by Tibor's way 
+ * by Tibor's way
  * Methods
  *  - load( url )
  *  - play
@@ -15,6 +15,8 @@ var Audio = (function () {
 	var audioNode = document.createElement('audio');
 	var timeCallback = function(){};
 	var endCallback = function(){};
+  var ajax = new Ajax();
+  // var currTimeCallback = function(){};
 
 	audioNode.addEventListener('timeupdate', function(){
 		var percent = audioNode.currentTime / audioNode.duration * 100;
@@ -34,11 +36,14 @@ var Audio = (function () {
 	}
 
 	function load( url ) {
-		audioNode.src = url;
+		audioNode.src = './tracks/' + url;
+    // ajax.
+    // var trackDir = './tracks/';
 	}
 
 	function play(){
 		audioNode.play();
+    // Tracks.tracks
 	}
 
 	function pause(){
@@ -49,6 +54,12 @@ var Audio = (function () {
 	function seek( percent ){
 		audioNode.currentTime = audioNode.duration * percent / 100;
 	}
+
+  function currTimeUpdate ( percent, position) {
+    time = audioNode.currentTime;
+    time = percent * position;
+    return time;
+  }
 
 	function isPaused() {
 		return audioNode.paused;
@@ -61,6 +72,7 @@ var Audio = (function () {
 		seek: seek,
 		onUpdate: setUpdateEvent,
 		onComplete: setCompleteEvent,
+    timeUpdate: currTimeUpdate,
 		paused: isPaused
 	}
 })();

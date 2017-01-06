@@ -35,7 +35,7 @@ var Playlists = (function () {
 		var p = document.createElement('p');
 		p.innerHTML = name;
 		p.addEventListener('click', function(){
-			console.log(p);
+			// console.log(p);
 			// TODO: Render tracks
 			Tracks.load(p);
 		});

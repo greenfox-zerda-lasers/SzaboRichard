@@ -1,8 +1,17 @@
 'use strict';
 
+var fs = require('fs');
+var async = require('async');
 var express = require('express');
+var bodyParser = require('body-parser');
+var meta = require('musicmetadata');
 var mysql = require('mysql');
 var app = express();
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+app.use('/', express.static('../public'));
 
 var connection = mysql.createConnection({
       host     : 'localhost',
@@ -12,13 +21,12 @@ var connection = mysql.createConnection({
 });
 connection.connect();
 
-// var playlists = [
-//     [{ "id": 21, "title": "Halahula", "artist": "Untitled artist", "duration": 545, "path": "c:/music/halahula.mp3" },
-//     { "id": 412, "title": "No sleep till Brooklyn", "artist": "Beastie Boys", "duration": 312.12, "path": "c:/music/beastie boys/No sleep till Brooklyn.mp3" }],
-//
-//     [{ "id": 33, "title": "Helloo", "artist": "bjdfbje", "duration": 577, "path": "c:/music/helloo.mp3" },
-//     { "id": 111, "title": "Brooklyn", "artist": "cats", "duration": 52.12, "path": "c:/music/cats/Brooklyn.mp3" }]
-// ];
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 
 app.get('/playlists', function (req, res) {
   connection.query('SELECT * FROM playlists', function(err, rows, fields){
@@ -98,6 +106,25 @@ app.delete("/playlist-tracks/:playlist_id/:track_id", function deletePlaylist (r
     }
     res.send(rows);
   });
+});
+
+app.get('/tracks', function(req, res) {
+	fs.readdir('../public/tracks/', function (err, files) {
+		var coll = [];
+		async.each(
+			files,
+			function (file, callback){
+				meta(fs.createReadStream('../public/tracks/' + file), function (err, metadata) {
+					metadata.fileName = file;
+					coll.push(metadata);
+				 	callback();
+				});
+			},
+			function(){
+  				res.send(coll);
+			}
+		);
+	});
 });
 
 

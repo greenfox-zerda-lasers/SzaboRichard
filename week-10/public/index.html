@@ -51,18 +51,8 @@
         </div>
       </article>
       <article class="tracks">
-        <!-- <ol>
-          <div class="tracks-wrapper">
-            <li>loooooooooong tracks
-              <span>16:30</span>
-            </li>
-          </div>
-          <div class="tracks-wrapper">
-            <li>asdasd</li>
-          </div>
-        </ol> -->
 
-        <div class="tracklist-inner">
+        <!-- <div class="tracklist-inner">
           <div class="tracklist-inner-style">
             <p>1</p>
             <p>loooooooooong tracks</p>
@@ -76,7 +66,7 @@
             <p>loooooooooong tracks</p>
           </div>
           <p>6:30</p>
-        </div>
+        </div> -->
 
       </article>
       <article class="mscplayer">
@@ -92,8 +82,8 @@
         </div>
         <div class="bonus-buttons">
           <button type="button" class="shuffle" name="button"></button>
-          <div class="bonus-slider">
-            <input type="range" min="0" max="1"> -
+          <div id="palyer">
+            <!-- <input type="range" min="0" max="1"> - -->
           </div>
         </div>
       </article>
@@ -105,7 +95,6 @@
     <!-- <script src="slider.js"></script> -->
     <script src="rangeSlider.js"></script>
     <script>
-
       (function () {
          var slider = document.querySelectorAll('input[type="range"]');
          rangeSlider.create(slider[0], {
@@ -125,6 +114,7 @@
           },
           // Callback function
           onSlide: function (value, percent, position) {
+            Audio.timeUpdate(percent, position);
             // media.currentTime = percent * position;
             // value = (media.currentTime / media.duration) * 100;
             // console.log(value);
@@ -142,9 +132,11 @@
       })();
     </script>
     <script src="ajax.js"></script>
-  	<script src="audio.js"></script>
+    <script src="audio.js"></script>
+    <script src="tracks.js"></script>
 	  <script src="playlists.js"></script>
 	  <script src="controlPanel.js"></script>
+
     <!-- <script src="frontend.js"></script> -->
 
   </body>
