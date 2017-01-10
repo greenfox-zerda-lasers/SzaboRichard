@@ -43,8 +43,8 @@ app.get('/decode/all', function (req, res) {
 app.post('/decode/', function decode (req, res) {
   console.log(req.body);
   var test =  {
-    "text": "oruhp lsvxp groru vlw",
-    "shift": 3
+    "text": "asdasfafas fasf asf ",
+    "shift": 13
  };
 
   connection.query({
