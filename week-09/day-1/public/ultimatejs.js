@@ -1,11 +1,12 @@
 'use strict';
+
 let button = document.querySelector('.addThis');
 
 load();
 function load() {
 // (function load() {
   let xhr = new XMLHttpRequest();
-  let url = 'http://localhost:3000/todos';
+  let url = 'http://localhost:3500/todos';
   xhr.open('GET', url, true);
   xhr.send();
   xhr.onreadystatechange = function() {
@@ -67,7 +68,7 @@ function getData() {
 
 function addToDoo() {
   let xhr = new XMLHttpRequest();
-  let url = 'http://localhost:3000/todos/';
+  let url = 'http://localhost:3500/todos/';
   xhr.open('POST', url, true);
   xhr.setRequestHeader('Content-Type', 'application/json');
   xhr.onreadystatechange = function() {
@@ -86,7 +87,7 @@ button.addEventListener('click',  function(){
 
 function deleteToDo(index) {
   let xhr = new XMLHttpRequest();
-  let url = 'http://localhost:3000/todos/'+index;
+  let url = 'http://localhost:3500/todos/'+index;
   xhr.open('DELETE', url, true);
   xhr.setRequestHeader('Accept', 'application/json');
   xhr.send();
@@ -96,7 +97,7 @@ function deleteToDo(index) {
 function upDateCheck(item) {
   let returnedToDo = {};
   let xhr = new XMLHttpRequest();
-  let url = 'http://localhost:3000/todos/'+item.dataset.index;
+  let url = 'http://localhost:3500/todos/'+item.dataset.index;
   xhr.open('PUT', url, true);
   xhr.setRequestHeader('Content-Type', 'application/json');
   let returnedData = checkedChekcer(item);

@@ -41,10 +41,16 @@ app.get('/decode/all', function (req, res) {
 });
 
 app.post('/decode/', function decode (req, res) {
-  console.log(req.body.text, req.body.shift);
+  console.log(req.body);
+  var test =  {
+    "text": "oruhp lsvxp groru vlw",
+    "shift": 3
+ };
+
   connection.query({
-  		sql: 'INSERT INTO decript(shift, text) VALUES(?, ?)',
-  		values: [ req.param.shift, decoder( req.body.shift, req.body.text)]
+  		sql: 'INSERT INTO decript( text, shift) VALUES(?, ?)',
+  		// values: [ decoder( req.body.shift, req.body.text), req.param.shift ]
+      values: [ test.text, test.shift ]
   	}, function(err, rows, fields) {
   		if (err) {
         throw err;
@@ -55,5 +61,5 @@ app.post('/decode/', function decode (req, res) {
 });
 
 app.listen(3600, function(){
-	console.log('SERVER IS UP AND RUNNIN on port: 3600')
+	console.log('SERVER IS UP AND RUNNING on port: 3600')
 });

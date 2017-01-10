@@ -46,8 +46,6 @@ app.post("/playlists/", function postPlaylist (req, res) {
   		values: ['Hello', 0]
   	}, function(err, rows, fields) {
   		if (err) throw err;
-      // console.log(rows);
-      // rows = rows.map(rows);
     	res.send(rows);
     });
 });
@@ -108,13 +106,15 @@ app.delete("/playlist-tracks/:playlist_id/:track_id", function deletePlaylist (r
   });
 });
 
+// afasf
+
 app.get('/tracks', function(req, res) {
 	fs.readdir('../public/tracks/', function (err, files) {
 		var coll = [];
 		async.each(
 			files,
 			function (file, callback){
-				meta(fs.createReadStream('../public/tracks/' + file), function (err, metadata) {
+				meta(fs.createReadStream('../public/tracks/' + file), { duration: true}, function (err, metadata) {
 					metadata.fileName = file;
 					coll.push(metadata);
 				 	callback();

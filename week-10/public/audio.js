@@ -56,9 +56,7 @@ var Audio = (function () {
 	}
 
   function currTimeUpdate ( percent, position) {
-    time = audioNode.currentTime;
-    time = percent * position;
-    return time;
+    return audioNode.currentTime;
   }
 
 	function isPaused() {

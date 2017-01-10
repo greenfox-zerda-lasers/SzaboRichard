@@ -25,8 +25,6 @@
        divNode.addEventListener('click', function(){
          ControlPanel.setCounter( divNode.dataset.id-1);
          ControlPanel.load();
-        //  Audio.play();
-        //  img.src = thsi.track.
        });
        var divNodeInner = document.createElement('div');
        divNodeInner.className = 'tracklist-inner-style';
@@ -47,10 +45,14 @@
      var p = document.createElement('p');
      var trackP = document.createElement('p');
      var timerP = document.createElement('p');
-    //  console.log(id, name, time);
+     sec = Math.floor( time );
+     min = Math.floor( sec / 60 );
+     min = min >= 10 ? min : '0' + min;
+     sec = Math.floor( sec % 60 );
+     sec = sec >= 10 ? sec : '0' + sec;
      p.textContent = counter;
      trackP.textContent = name;
-     timerP.textContent = time;
+     timerP.textContent = min + ':' + sec;
      return [p, trackP, timerP];
    }
 

@@ -58,7 +58,7 @@
     // console.log(Tracks.tracks());
     console.log(counter);
 		Audio.load(Tracks.tracks()[counter].fileName);
-    Audio.play();
+    // Audio.play();
 		Audio.onUpdate(function( percent, time ){
 			seekBar.rangeSlider.update({value: percent});
 			timerLabel.innerHTML = format(time);
