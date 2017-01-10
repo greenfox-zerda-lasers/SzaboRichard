@@ -41,23 +41,30 @@ app.get('/decode/all', function (req, res) {
 });
 
 app.post('/decode/', function decode (req, res) {
-  console.log(req.body);
-  var test =  {
-    "text": "asdasfafas fasf asf ",
-    "shift": 13
- };
-
-  connection.query({
-  		sql: 'INSERT INTO decript( text, shift) VALUES(?, ?)',
-  		// values: [ decoder( req.body.shift, req.body.text), req.param.shift ]
-      values: [ test.text, test.shift ]
-  	}, function(err, rows, fields) {
-  		if (err) {
-        throw err;
-      } else {
-        res.send(rows);
-      }
+  // console.log(req.body.shift, req.body.text);
+  let decoded =  decoder( req.body.shift, req.body.text);
+  let errMsg =   {
+    "status": "error",
+    "error": "Shift is out of bound"
+  };
+  let response = {
+    "status": "ok",
+    "text": decoded
+  };
+  if (req.body.shift > 26 || req.body.shift < -26 || req.body.text === "") {
+    res.status = 400;
+    res.send(errMsg);
+  } else {
+    connection.query({
+      sql: 'INSERT INTO decript( text, shift) VALUES(?, ?)',
+      values: [ decoder( req.body.shift, req.body.text), req.body.shift ]
+      // values: [ test.text, test.shift ]
+    }, function(err, rows, fields) {
+      if (!err) {
+        res.send(response);
+      };
     });
+  };
 });
 
 app.listen(3600, function(){
