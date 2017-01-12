@@ -56,8 +56,8 @@ app.post('/decode/', function decode (req, res) {
     res.send(errMsg);
   } else {
     connection.query({
-      sql: 'INSERT INTO decript( text, shift) VALUES(?, ?)',
-      values: [ decoder( req.body.shift, req.body.text), req.body.shift ]
+      // sql: 'INSERT INTO decript( text, shift) VALUES(?, ?)',
+      // values: [ decoder( req.body.shift, req.body.text), req.body.shift ]
       // values: [ test.text, test.shift ]
     }, function(err, rows, fields) {
       if (!err) {
